@@ -6,57 +6,67 @@ import { motion } from 'framer-motion'
 import { Cloud, Shield, Globe, TrendingUp, Brain, Database, ShoppingCart, Users, CheckCircle } from 'lucide-react'
 import Layout from '@/components/Layout'
 import Card from '@/components/Card'
+import ServiceIcon from '@/components/ServiceIcon'
+import Banner from '@/components/Banner'
 
 export default function Services() {
   const { t } = useTranslation('common')
 
   const serviceCategories = [
     {
-      icon: <Cloud className="w-10 h-10" />,
+      Icon: Cloud,
       titleKey: 'services.categories.cloud.title',
       itemsKey: 'services.categories.cloud.items',
+      color: '#00C4CC',
       delay: 0,
     },
     {
-      icon: <Shield className="w-10 h-10" />,
+      Icon: Shield,
       titleKey: 'services.categories.compliance.title',
       itemsKey: 'services.categories.compliance.items',
+      color: '#10B981',
       delay: 0.1,
     },
     {
-      icon: <Globe className="w-10 h-10" />,
+      Icon: Globe,
       titleKey: 'services.categories.website.title',
       itemsKey: 'services.categories.website.items',
+      color: '#3B82F6',
       delay: 0.2,
     },
     {
-      icon: <TrendingUp className="w-10 h-10" />,
+      Icon: TrendingUp,
       titleKey: 'services.categories.marketing.title',
       itemsKey: 'services.categories.marketing.items',
+      color: '#8B5CF6',
       delay: 0.3,
     },
     {
-      icon: <Brain className="w-10 h-10" />,
+      Icon: Brain,
       titleKey: 'services.categories.ai.title',
       itemsKey: 'services.categories.ai.items',
+      color: '#EC4899',
       delay: 0.4,
     },
     {
-      icon: <Database className="w-10 h-10" />,
+      Icon: Database,
       titleKey: 'services.categories.integration.title',
       itemsKey: 'services.categories.integration.items',
+      color: '#F59E0B',
       delay: 0.5,
     },
     {
-      icon: <ShoppingCart className="w-10 h-10" />,
+      Icon: ShoppingCart,
       titleKey: 'services.categories.ecommerce.title',
       itemsKey: 'services.categories.ecommerce.items',
+      color: '#EF4444',
       delay: 0.6,
     },
     {
-      icon: <Users className="w-10 h-10" />,
+      Icon: Users,
       titleKey: 'services.categories.consulting.title',
       itemsKey: 'services.categories.consulting.items',
+      color: '#06B6D4',
       delay: 0.7,
     },
   ]
@@ -64,23 +74,12 @@ export default function Services() {
   return (
     <Layout title={`${t('services.title')} - ${t('company_name')}`} description={t('tagline')}>
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-primary to-accent text-white py-32 pt-40">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t('services.title')}
-            </h1>
-            <p className="text-xl text-gray-200">
-              {t('tagline')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Banner
+        title={t('services.title')}
+        subtitle="SuperKITT"
+        description={t('tagline')}
+        height="medium"
+      />
 
       {/* Services Grid */}
       <section className="py-20 bg-gray-50">
@@ -91,8 +90,10 @@ export default function Services() {
 
               return (
                 <Card key={index} delay={category.delay}>
-                  <div className="flex items-start space-x-4">
-                    <div className="text-secondary flex-shrink-0">{category.icon}</div>
+                  <div className="flex items-start space-x-6">
+                    <div className="flex-shrink-0 pt-2">
+                      <ServiceIcon Icon={category.Icon} color={category.color} size={48} />
+                    </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-primary mb-4">
                         {t(category.titleKey)}
@@ -100,7 +101,7 @@ export default function Services() {
                       <ul className="space-y-2">
                         {items.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start space-x-2">
-                            <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: category.color }} />
                             <span className="text-gray-700">{item}</span>
                           </li>
                         ))}

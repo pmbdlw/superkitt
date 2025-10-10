@@ -7,50 +7,59 @@ import { Cloud, Shield, Globe as GlobeIcon, TrendingUp, Brain, Database, Shoppin
 import Layout from '@/components/Layout'
 import Button from '@/components/Button'
 import Card from '@/components/Card'
-import ParticleBackground from '@/components/ParticleBackground'
+import ServiceIcon from '@/components/ServiceIcon'
+import Banner from '@/components/Banner'
 
 export default function Home() {
   const { t } = useTranslation('common')
 
   const services = [
     {
-      icon: <Cloud className="w-8 h-8" />,
+      Icon: Cloud,
       titleKey: 'services.categories.cloud.title',
+      color: '#00C4CC',
       delay: 0,
     },
     {
-      icon: <Shield className="w-8 h-8" />,
+      Icon: Shield,
       titleKey: 'services.categories.compliance.title',
+      color: '#10B981',
       delay: 0.1,
     },
     {
-      icon: <GlobeIcon className="w-8 h-8" />,
+      Icon: GlobeIcon,
       titleKey: 'services.categories.website.title',
+      color: '#3B82F6',
       delay: 0.2,
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
+      Icon: TrendingUp,
       titleKey: 'services.categories.marketing.title',
+      color: '#8B5CF6',
       delay: 0.3,
     },
     {
-      icon: <Brain className="w-8 h-8" />,
+      Icon: Brain,
       titleKey: 'services.categories.ai.title',
+      color: '#EC4899',
       delay: 0.4,
     },
     {
-      icon: <Database className="w-8 h-8" />,
+      Icon: Database,
       titleKey: 'services.categories.integration.title',
+      color: '#F59E0B',
       delay: 0.5,
     },
     {
-      icon: <ShoppingCart className="w-8 h-8" />,
+      Icon: ShoppingCart,
       titleKey: 'services.categories.ecommerce.title',
+      color: '#EF4444',
       delay: 0.6,
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      Icon: Users,
       titleKey: 'services.categories.consulting.title',
+      color: '#06B6D4',
       delay: 0.7,
     },
   ]
@@ -59,30 +68,19 @@ export default function Home() {
 
   return (
     <Layout title={t('company_name')} description={t('tagline')}>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary to-accent text-white min-h-screen flex items-center overflow-hidden">
-        <ParticleBackground />
-        <div className="container-custom relative z-10 py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              {t('hero.headline')}
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              {t('hero.subheadline')}
-            </p>
-            <Link href="/contact">
-              <Button size="lg" className="bg-secondary hover:bg-secondary/90">
-                {t('hero.cta')}
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Banner */}
+      <Banner
+        title={t('hero.headline')}
+        subtitle="SuperKITT"
+        description={t('hero.subheadline')}
+        height="large"
+      >
+        <Link href="/contact">
+          <Button size="lg" className="bg-secondary hover:bg-secondary/90">
+            {t('hero.cta')}
+          </Button>
+        </Link>
+      </Banner>
 
       {/* Services Overview */}
       <section className="py-20 bg-gray-50">
@@ -99,8 +97,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {services.map((service, index) => (
               <Card key={index} delay={service.delay}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="text-secondary mb-4">{service.icon}</div>
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <ServiceIcon Icon={service.Icon} color={service.color} size={56} />
                   <h3 className="text-lg font-semibold text-primary">
                     {t(service.titleKey)}
                   </h3>
