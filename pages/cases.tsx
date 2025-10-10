@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
@@ -15,12 +14,12 @@ export default function Cases() {
   const caseStudies = [
     {
       key: 'case1',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+      gradient: 'from-blue-500 to-cyan-600',
       delay: 0,
     },
     {
       key: 'case2',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      gradient: 'from-purple-500 to-pink-600',
       delay: 0.2,
     },
   ]
@@ -32,7 +31,7 @@ export default function Cases() {
         title={t('cases.title')}
         subtitle="SuperKITT"
         description={t('tagline')}
-        image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
+        gradient="from-primary to-accent"
         height="medium"
       />
 
@@ -43,19 +42,35 @@ export default function Cases() {
             {caseStudies.map((caseStudy) => (
               <Card key={caseStudy.key} delay={caseStudy.delay}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Case Image */}
-                  <div className="relative h-64 lg:h-auto rounded-lg overflow-hidden">
-                    <Image
-                      src={caseStudy.image}
-                      alt={t(`cases.${caseStudy.key}.client`)}
-                      fill
-                      className="object-cover"
+                  {/* Case Visual with Gradient */}
+                  <div className={`relative h-64 lg:h-auto rounded-lg overflow-hidden bg-gradient-to-br ${caseStudy.gradient}`}>
+                    {/* Animated Pattern Overlay */}
+                    <motion.div
+                      className="absolute inset-0 opacity-20"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                      }}
+                      animate={{
+                        backgroundPosition: ['0px 0px', '60px 60px'],
+                      }}
+                      transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-white font-semibold text-lg">
-                        {t(`cases.${caseStudy.key}.client`)}
-                      </p>
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-center h-full">
+                      <div className="text-center">
+                        <p className="text-white font-bold text-2xl mb-2">
+                          {t(`cases.${caseStudy.key}.client`)}
+                        </p>
+                        <div className="flex justify-center space-x-2">
+                          <AlertCircle className="w-5 h-5 text-white/80" />
+                          <Lightbulb className="w-5 h-5 text-white/80" />
+                          <TrendingUp className="w-5 h-5 text-white/80" />
+                        </div>
+                      </div>
                     </div>
                   </div>
 

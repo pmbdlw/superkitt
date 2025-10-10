@@ -19,7 +19,6 @@ export default function Services() {
       titleKey: 'services.categories.cloud.title',
       itemsKey: 'services.categories.cloud.items',
       color: '#00C4CC',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
       delay: 0,
     },
     {
@@ -27,7 +26,6 @@ export default function Services() {
       titleKey: 'services.categories.compliance.title',
       itemsKey: 'services.categories.compliance.items',
       color: '#10B981',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80',
       delay: 0.1,
     },
     {
@@ -35,7 +33,6 @@ export default function Services() {
       titleKey: 'services.categories.website.title',
       itemsKey: 'services.categories.website.items',
       color: '#3B82F6',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
       delay: 0.2,
     },
     {
@@ -43,7 +40,6 @@ export default function Services() {
       titleKey: 'services.categories.marketing.title',
       itemsKey: 'services.categories.marketing.items',
       color: '#8B5CF6',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
       delay: 0.3,
     },
     {
@@ -51,7 +47,6 @@ export default function Services() {
       titleKey: 'services.categories.ai.title',
       itemsKey: 'services.categories.ai.items',
       color: '#EC4899',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
       delay: 0.4,
     },
     {
@@ -59,7 +54,6 @@ export default function Services() {
       titleKey: 'services.categories.integration.title',
       itemsKey: 'services.categories.integration.items',
       color: '#F59E0B',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
       delay: 0.5,
     },
     {
@@ -67,7 +61,6 @@ export default function Services() {
       titleKey: 'services.categories.ecommerce.title',
       itemsKey: 'services.categories.ecommerce.items',
       color: '#EF4444',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
       delay: 0.6,
     },
     {
@@ -75,7 +68,6 @@ export default function Services() {
       titleKey: 'services.categories.consulting.title',
       itemsKey: 'services.categories.consulting.items',
       color: '#06B6D4',
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
       delay: 0.7,
     },
   ]
@@ -112,7 +104,6 @@ export default function Services() {
               <ServiceCard
                 key={index}
                 title={t(category.titleKey)}
-                image={category.image}
                 Icon={category.Icon}
                 color={category.color}
                 delay={category.delay}
