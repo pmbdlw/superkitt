@@ -1,0 +1,136 @@
+{
+  "company_name": "SuperKitt",
+  "tagline": "中国企业出海的一站式技术伙伴",
+  "nav": {
+    "home": "首页",
+    "services": "服务",
+    "cases": "案例",
+    "about": "关于",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "headline": "中国企业出海的一站式IT解决方案",
+    "subheadline": "从云架构、数据安全到AI赋能，我们助力您的全球化进程",
+    "cta": "立即咨询"
+  },
+  "services": {
+    "title": "我们的服务",
+    "categories": {
+      "cloud": {
+        "title": "全球云与架构服务",
+        "items": [
+          "海外云平台部署（AWS / Azure / GCP）",
+          "CDN与加速方案（Cloudflare、Akamai）",
+          "Docker / Kubernetes 应用部署",
+          "成本优化与可观测系统"
+        ]
+      },
+      "compliance": {
+        "title": "合规与安全",
+        "items": [
+          "GDPR / SOC 2 / ISO27001 合规咨询",
+          "数据出境与加密方案",
+          "渗透测试与安全审计"
+        ]
+      },
+      "website": {
+        "title": "网站与应用出海",
+        "items": [
+          "多语言官网建设（Next.js / WordPress）",
+          "海外SEO与内容优化",
+          "支付与CDN集成"
+        ]
+      },
+      "marketing": {
+        "title": "营销与自动化",
+        "items": [
+          "海外广告追踪系统（Google Ads / Meta）",
+          "营销自动化与CRM集成",
+          "邮件营销平台"
+        ]
+      },
+      "ai": {
+        "title": "AI与智能化",
+        "items": [
+          "多语言客服机器人（GPT驱动）",
+          "文档识别与数据提取",
+          "自定义AI助手"
+        ]
+      },
+      "integration": {
+        "title": "系统集成与数据服务",
+        "items": [
+          "ERP / CRM / 电商系统对接",
+          "数据管道与可视化"
+        ]
+      },
+      "ecommerce": {
+        "title": "跨境电商技术服务",
+        "items": [
+          "Shopify / WooCommerce 独立站搭建",
+          "多币种支持与支付集成",
+          "数据追踪与A/B测试"
+        ]
+      },
+      "consulting": {
+        "title": "技术外包与咨询",
+        "items": [
+          "技术团队外包",
+          "架构评估与优化",
+          "海外技术支持"
+        ]
+      }
+    }
+  },
+  "partners": {
+    "title": "我们的合作伙伴"
+  },
+  "cta": {
+    "text": "准备好出海了吗？联系我们的技术专家。",
+    "button": "联系SuperKitt"
+  },
+  "cases": {
+    "title": "客户案例",
+    "case1": {
+      "client": "跨境电商A公司",
+      "problem": "网站在海外访问速度慢，影响用户体验和转化率",
+      "solution": "部署全球CDN加速方案，采用AWS CloudFront和边缘计算优化",
+      "result": "访问速度提升80%，页面加载时间从5秒降至1秒以内，转化率提升35%"
+    },
+    "case2": {
+      "client": "SaaS创业团队B",
+      "problem": "需要快速进入欧洲市场，但缺乏GDPR合规经验和多语言技术支持",
+      "solution": "构建符合GDPR的多语言网站，实施数据加密和用户隐私保护方案",
+      "result": "成功通过GDPR审核，3个月内获得5000+欧洲用户，用户满意度达92%"
+    }
+  },
+  "about": {
+    "title": "关于SuperKitt",
+    "description": "SuperKitt致力于成为中国企业出海的技术中枢。我们专注于海外云架构、数据安全、网站出海、AI赋能与系统集成。",
+    "mission_title": "我们的使命",
+    "mission": "用技术让中国企业的全球化更简单、更安全、更智能。",
+    "partners_title": "技术合作伙伴"
+  },
+  "contact": {
+    "title": "联系我们",
+    "form": {
+      "name": "姓名",
+      "email": "邮箱",
+      "company": "公司",
+      "requirements": "需求说明",
+      "submit": "提交咨询"
+    },
+    "info": {
+      "email": "contact@superkitt.com",
+      "wechat": "微信联系"
+    }
+  },
+  "privacy": {
+    "title": "隐私与合规",
+    "content": "SuperKitt遵守GDPR及各国数据保护法规，所有客户数据均在授权范围内安全存储与传输。我们提供定制化合规咨询服务，确保您的业务符合国际标准。"
+  },
+  "footer": {
+    "copyright": "© 2024 SuperKitt. 保留所有权利。",
+    "description": "中国企业出海的一站式技术伙伴"
+  }
+}

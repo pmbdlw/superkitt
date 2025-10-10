@@ -1,0 +1,171 @@
+project:
+  name: "SuperKitt Official Website"
+  description: |
+    SuperKitt 是一家为中国企业提供出海IT解决方案的技术公司。
+    本项目旨在构建一个国际化、现代化、具有专业信任感的企业官网，
+    用于展示SuperKitt的品牌形象、服务内容与客户案例，并支持潜在客户咨询。
+
+  goals:
+    - 体现SuperKitt的技术实力与国际视野
+    - 展示清晰的服务体系和案例成果
+    - 提供多语言支持（中文 / 英文）
+    - 建立潜在客户咨询入口（表单 + 邮箱Webhook）
+    - 优化SEO、速度与移动端体验
+
+branding:
+  company_name: "SuperKitt"
+  tagline_en: "Your Global IT Partner for Going Abroad"
+  tagline_cn: "中国企业出海的一站式技术伙伴"
+  tone_of_voice:
+    - 专业
+    - 国际化
+    - 可信赖
+    - 技术驱动
+  colors:
+    primary: "#0A1F44"
+    secondary: "#00C4CC"
+    background: "#FFFFFF"
+    accent: "#111827"
+  typography:
+    - Inter
+    - Noto Sans SC
+  icons: lucide-react
+
+structure:
+  pages:
+    - name: "Home"
+      path: "/"
+      sections:
+        - hero:
+            headline: "中国企业出海的一站式IT解决方案"
+            subheadline: "从云架构、数据安全到AI赋能，我们助力您的全球化进程"
+            cta: "立即咨询"
+        - overview:
+            title: "我们的服务"
+            content_from: "services"
+        - partners:
+            title: "我们的合作伙伴"
+            items: ["AWS", "Azure", "Cloudflare", "OpenAI"]
+        - cta:
+            text: "准备好出海了吗？联系我们的技术专家。"
+            button: "联系SuperKitt"
+    - name: "Services"
+      path: "/services"
+      sections:
+        - title: "我们的服务"
+        - content:
+            categories:
+              - title: "全球云与架构服务"
+                items:
+                  - 海外云平台部署（AWS / Azure / GCP）
+                  - CDN与加速方案（Cloudflare、Akamai）
+                  - Docker / Kubernetes 应用部署
+                  - 成本优化与可观测系统
+              - title: "合规与安全"
+                items:
+                  - GDPR / SOC 2 / ISO27001 合规咨询
+                  - 数据出境与加密方案
+                  - 渗透测试与安全审计
+              - title: "网站与应用出海"
+                items:
+                  - 多语言官网建设（Next.js / WordPress）
+                  - 海外SEO与内容优化
+                  - 支付与CDN集成
+              - title: "营销与自动化"
+                items:
+                  - 海外广告追踪系统（Google Ads / Meta）
+                  - 营销自动化与CRM集成
+                  - 邮件营销平台
+              - title: "AI与智能化"
+                items:
+                  - 多语言客服机器人（GPT驱动）
+                  - 文档识别与数据提取
+                  - 自定义AI助手
+              - title: "系统集成与数据服务"
+                items:
+                  - ERP / CRM / 电商系统对接
+                  - 数据管道与可视化
+              - title: "跨境电商技术服务"
+                items:
+                  - Shopify / WooCommerce 独立站搭建
+                  - 多币种支持与支付集成
+                  - 数据追踪与A/B测试
+              - title: "技术外包与咨询"
+                items:
+                  - 技术团队外包
+                  - 架构评估与优化
+                  - 海外技术支持
+    - name: "Case Studies"
+      path: "/cases"
+      template: "案例模板：问题 → 解决方案 → 成果"
+      examples:
+        - client: "跨境电商A公司"
+          summary: "通过SuperKitt实现海外云部署与页面加速，访问速度提升80%"
+        - client: "SaaS创业团队B"
+          summary: "我们帮助其构建多语言网站和GDPR合规体系，顺利进入欧洲市场"
+    - name: "About"
+      path: "/about"
+      sections:
+        - title: "关于SuperKitt"
+          text: |
+            SuperKitt致力于成为中国企业出海的技术中枢。
+            我们专注于海外云架构、数据安全、网站出海、AI赋能与系统集成。
+        - title: "我们的使命"
+          text: "用技术让中国企业的全球化更简单、更安全、更智能。"
+        - partners:
+          title: "技术合作伙伴"
+          list: ["AWS", "Microsoft Azure", "Cloudflare", "OpenAI"]
+    - name: "Contact"
+      path: "/contact"
+      sections:
+        - form:
+            fields:
+              - 姓名
+              - 邮箱
+              - 公司
+              - 需求说明
+            submit_to: "webhook or email"
+        - info:
+            email: "contact@superkitt.com"
+            social:
+              - linkedin: "https://linkedin.com/company/superkitt"
+              - wechat_qr: "wechat_qr.png"
+    - name: "Privacy"
+      path: "/privacy"
+      sections:
+        - title: "隐私与合规"
+          text: |
+            SuperKitt遵守GDPR及各国数据保护法规，所有客户数据均在授权范围内安全存储与传输。
+            我们提供定制化合规咨询服务，确保您的业务符合国际标准。
+
+tech_stack:
+  frontend: Next.js 14 + React + TailwindCSS
+  animation: Framer Motion
+  icons: lucide-react
+  i18n: next-i18next
+  form: React Hook Form + Webhook
+  deployment: Vercel
+  seo:
+    meta_tags: true
+    sitemap: true
+    robots: true
+    lighthouse_score_min: 90
+
+design_guidelines:
+  layout: responsive
+  style:
+    - 干净、现代、国际化
+    - 深蓝主色调 + 青色辅助色
+    - 卡片阴影柔和，滚动渐入动画
+  interaction:
+    - 悬停高亮
+    - CTA动效按钮
+    - 顶部导航固定与收缩
+  hero_effect: particle background
+
+instructions_for_ai:
+  - 为每个服务生成中英文介绍
+  - 保持简洁、专业、可信的语言风格
+  - 所有内容模块可复用
+  - 文案优先简明易懂，适合企业决策者阅读
+  - 输出时确保目录、路由、组件结构清晰
