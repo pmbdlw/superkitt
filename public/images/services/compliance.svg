@@ -1,0 +1,59 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="complianceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#complianceBg)"/>
+
+  <!-- Grid Pattern -->
+  <pattern id="complianceGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="600" fill="url(#complianceGrid)"/>
+
+  <!-- Shield Icon -->
+  <path d="M 400 120 L 480 160 L 480 280 Q 480 360 400 420 Q 320 360 320 280 L 320 160 Z"
+        fill="rgba(255,255,255,0.9)" stroke="rgba(255,255,255,1)" stroke-width="3"/>
+
+  <!-- Lock Inside Shield -->
+  <rect x="375" y="240" width="50" height="60" rx="5" fill="#10B981"/>
+  <circle cx="400" cy="220" r="20" fill="none" stroke="#10B981" stroke-width="8"/>
+  <line x1="380" y1="220" x2="380" y2="240" stroke="#10B981" stroke-width="8"/>
+  <line x1="420" y1="220" x2="420" y2="240" stroke="#10B981" stroke-width="8"/>
+  <circle cx="400" cy="270" r="6" fill="white"/>
+
+  <!-- Checkmarks -->
+  <g opacity="0.8">
+    <path d="M 200 250 L 220 270 L 260 210" stroke="rgba(255,255,255,0.9)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M 540 250 L 560 270 L 600 210" stroke="rgba(255,255,255,0.9)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Security Badges -->
+  <g transform="translate(150, 420)">
+    <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.85)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#10B981">ISO</text>
+    <text x="0" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#10B981">27001</text>
+  </g>
+
+  <g transform="translate(400, 450)">
+    <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.85)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#10B981">SOC</text>
+    <text x="0" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#10B981">2</text>
+  </g>
+
+  <g transform="translate(650, 420)">
+    <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.85)"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10B981">GDPR</text>
+  </g>
+
+  <!-- Animated Lock Particles -->
+  <circle cx="300" cy="150" r="3" fill="rgba(255,255,255,0.7)">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="500" cy="180" r="4" fill="rgba(255,255,255,0.7)">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

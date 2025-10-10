@@ -1,5 +1,6 @@
 import { LucideIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface ServiceCardProps {
   title: string
@@ -7,6 +8,7 @@ interface ServiceCardProps {
   Icon: LucideIcon
   color: string
   delay?: number
+  image?: string // 可选：使用图片而不是渐变
 }
 
 export default function ServiceCard({
@@ -14,7 +16,8 @@ export default function ServiceCard({
   description,
   Icon,
   color,
-  delay = 0
+  delay = 0,
+  image
 }: ServiceCardProps) {
   // Generate gradient based on the service color
   const gradientFrom = color
@@ -28,29 +31,44 @@ export default function ServiceCard({
       transition={{ duration: 0.5, delay }}
       className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
     >
-      {/* Gradient Background Section */}
-      <div
-        className="relative h-48 overflow-hidden"
-        style={{
-          background: `linear-gradient(135deg, ${gradientFrom} 0%, ${gradientTo} 100%)`
-        }}
-      >
-        {/* Animated Pattern Overlay */}
-        <motion.div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-          animate={{
-            backgroundPosition: ['0px 0px', '60px 60px'],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
+      {/* Image or Gradient Background Section */}
+      <div className="relative h-48 overflow-hidden">
+        {image ? (
+          // 使用图片
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover"
+          />
+        ) : (
+          // 使用渐变背景
+          <>
+            <div
+              className="absolute inset-0"
+              style={{
+                background: `linear-gradient(135deg, ${gradientFrom} 0%, ${gradientTo} 100%)`
+              }}
+            />
+            {/* Animated Pattern Overlay - 仅在使用渐变时显示 */}
+            <motion.div
+              className="absolute inset-0 opacity-20"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+              animate={{
+                backgroundPosition: ['0px 0px', '60px 60px'],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+          </>
+        )}
 
+        {/* Overlay for better icon visibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
         {/* Icon Overlay */}

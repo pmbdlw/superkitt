@@ -1,0 +1,72 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="marketingBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#marketingBg)"/>
+
+  <pattern id="marketingGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="600" fill="url(#marketingGrid)"/>
+
+  <!-- Chart Background -->
+  <rect x="150" y="150" width="500" height="300" rx="10" fill="rgba(255,255,255,0.9)"/>
+
+  <!-- Bar Chart -->
+  <rect x="200" y="280" width="60" height="120" rx="5" fill="#8B5CF6" opacity="0.7"/>
+  <rect x="290" y="240" width="60" height="160" rx="5" fill="#8B5CF6" opacity="0.8"/>
+  <rect x="380" y="200" width="60" height="200" rx="5" fill="#8B5CF6" opacity="0.9"/>
+  <rect x="470" y="160" width="60" height="240" rx="5" fill="#8B5CF6"/>
+  <rect x="560" y="180" width="60" height="220" rx="5" fill="#8B5CF6" opacity="0.85"/>
+
+  <!-- Trend Line -->
+  <path d="M 230 350 L 320 310 L 410 250 L 500 180 L 590 200"
+        stroke="#EC4899" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <animate attributeName="stroke-dasharray" values="0,800;800,0" dur="3s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Data Points -->
+  <circle cx="230" cy="350" r="8" fill="#EC4899"/>
+  <circle cx="320" cy="310" r="8" fill="#EC4899"/>
+  <circle cx="410" cy="250" r="8" fill="#EC4899"/>
+  <circle cx="500" cy="180" r="8" fill="#EC4899"/>
+  <circle cx="590" cy="200" r="8" fill="#EC4899"/>
+
+  <!-- Megaphone Icon -->
+  <g transform="translate(100, 50)">
+    <path d="M 50 30 L 10 10 L 10 70 L 50 50 Z" fill="rgba(255,255,255,0.9)"/>
+    <ellipse cx="50" cy="40" rx="5" ry="10" fill="rgba(255,255,255,0.9)"/>
+    <path d="M 10 30 L 0 25 L 0 55 L 10 50" fill="rgba(255,255,255,0.8)"/>
+
+    <!-- Sound Waves -->
+    <path d="M 60 25 Q 70 40 60 55" stroke="rgba(255,255,255,0.6)" stroke-width="3" fill="none">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 70 20 Q 85 40 70 60" stroke="rgba(255,255,255,0.5)" stroke-width="3" fill="none">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Email Icon -->
+  <g transform="translate(650, 100)">
+    <rect x="0" y="0" width="60" height="40" rx="5" fill="rgba(255,255,255,0.85)"/>
+    <path d="M 0 0 L 30 20 L 60 0" stroke="#8B5CF6" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Social Media Icons -->
+  <circle cx="680" cy="500" r="25" fill="rgba(255,255,255,0.8)"/>
+  <text x="680" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#8B5CF6">f</text>
+
+  <circle cx="580" cy="520" r="25" fill="rgba(255,255,255,0.8)"/>
+  <text x="580" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#8B5CF6">in</text>
+
+  <!-- Percentage Increase -->
+  <text x="350" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="rgba(255,255,255,0.9)">+247%</text>
+  <polygon points="450,90 470,120 430,120" fill="rgba(255,255,255,0.9)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="1.5s" repeatCount="indefinite"/>
+  </polygon>
+</svg>

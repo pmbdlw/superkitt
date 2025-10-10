@@ -1,0 +1,76 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="cloudBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00C4CC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0091A3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cloudHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#cloudBg)"/>
+
+  <!-- Grid Pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="600" fill="url(#grid)"/>
+
+  <!-- Cloud Network Illustration -->
+  <!-- Main Cloud -->
+  <ellipse cx="400" cy="250" rx="120" ry="80" fill="rgba(255,255,255,0.9)" opacity="0.9"/>
+  <ellipse cx="350" cy="270" rx="80" ry="60" fill="rgba(255,255,255,0.9)" opacity="0.9"/>
+  <ellipse cx="450" cy="270" rx="80" ry="60" fill="rgba(255,255,255,0.9)" opacity="0.9"/>
+  <rect x="320" y="260" width="160" height="60" fill="rgba(255,255,255,0.9)"/>
+
+  <!-- Server Icons -->
+  <g transform="translate(150, 400)">
+    <rect x="0" y="0" width="60" height="80" rx="5" fill="rgba(255,255,255,0.8)"/>
+    <rect x="5" y="10" width="50" height="8" rx="2" fill="#00C4CC"/>
+    <rect x="5" y="25" width="50" height="8" rx="2" fill="#00C4CC"/>
+    <rect x="5" y="40" width="50" height="8" rx="2" fill="#00C4CC"/>
+    <circle cx="30" cy="65" r="5" fill="#00C4CC"/>
+  </g>
+
+  <g transform="translate(350, 420)">
+    <rect x="0" y="0" width="60" height="80" rx="5" fill="rgba(255,255,255,0.8)"/>
+    <rect x="5" y="10" width="50" height="8" rx="2" fill="#00C4CC"/>
+    <rect x="5" y="25" width="50" height="8" rx="2" fill="#00C4CC"/>
+    <rect x="5" y="40" width="50" height="8" rx="2" fill="#00C4CC"/>
+    <circle cx="30" cy="65" r="5" fill="#00C4CC"/>
+  </g>
+
+  <g transform="translate(550, 400)">
+    <rect x="0" y="0" width="60" height="80" rx="5" fill="rgba(255,255,255,0.8)"/>
+    <rect x="5" y="10" width="50" height="8" rx="2" fill="#00C4CC"/>
+    <rect x="5" y="25" width="50" height="8" rx="2" fill="#00C4CC"/>
+    <rect x="5" y="40" width="50" height="8" rx="2" fill="#00C4CC"/>
+    <circle cx="30" cy="65" r="5" fill="#00C4CC"/>
+  </g>
+
+  <!-- Connection Lines -->
+  <line x1="180" y1="400" x2="350" y2="310" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-dasharray="5,5">
+    <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite"/>
+  </line>
+  <line x1="380" y1="420" x2="400" y2="330" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-dasharray="5,5">
+    <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite"/>
+  </line>
+  <line x1="580" y1="400" x2="450" y2="310" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-dasharray="5,5">
+    <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Floating Particles -->
+  <circle cx="200" cy="150" r="4" fill="rgba(255,255,255,0.6)">
+    <animate attributeName="cy" values="150;140;150" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="600" cy="200" r="5" fill="rgba(255,255,255,0.6)">
+    <animate attributeName="cy" values="200;190;200" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="250" cy="100" r="3" fill="rgba(255,255,255,0.6)">
+    <animate attributeName="cy" values="100;95;100" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

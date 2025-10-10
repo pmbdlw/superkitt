@@ -1,0 +1,89 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DB2777;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="brainGlow">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#aiBg)"/>
+
+  <pattern id="aiGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="600" fill="url(#aiGrid)"/>
+
+  <!-- Neural Network Nodes -->
+  <!-- Input Layer -->
+  <circle cx="150" cy="200" r="20" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="150" cy="300" r="20" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="150" cy="400" r="20" fill="rgba(255,255,255,0.9)"/>
+
+  <!-- Hidden Layer 1 -->
+  <circle cx="300" cy="150" r="20" fill="rgba(255,255,255,0.85)"/>
+  <circle cx="300" cy="250" r="20" fill="rgba(255,255,255,0.85)"/>
+  <circle cx="300" cy="350" r="20" fill="rgba(255,255,255,0.85)"/>
+  <circle cx="300" cy="450" r="20" fill="rgba(255,255,255,0.85)"/>
+
+  <!-- Hidden Layer 2 -->
+  <circle cx="500" cy="175" r="20" fill="rgba(255,255,255,0.85)"/>
+  <circle cx="500" cy="275" r="20" fill="rgba(255,255,255,0.85)"/>
+  <circle cx="500" cy="375" r="20" fill="rgba(255,255,255,0.85)"/>
+  <circle cx="500" cy="475" r="20" fill="rgba(255,255,255,0.85)"/>
+
+  <!-- Output Layer -->
+  <circle cx="650" cy="250" r="20" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="650" cy="350" r="20" fill="rgba(255,255,255,0.9)"/>
+
+  <!-- Connections (Animated) -->
+  <g opacity="0.5">
+    <!-- Input to Hidden Layer 1 -->
+    <line x1="170" y1="200" x2="280" y2="150" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="170" y1="200" x2="280" y2="250" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="170" y1="300" x2="280" y2="250" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="170" y1="300" x2="280" y2="350" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="170" y1="400" x2="280" y2="350" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="170" y1="400" x2="280" y2="450" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+
+    <!-- Hidden Layer 1 to Hidden Layer 2 -->
+    <line x1="320" y1="150" x2="480" y2="175" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="320" y1="250" x2="480" y2="275" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="320" y1="350" x2="480" y2="375" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="320" y1="450" x2="480" y2="475" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+
+    <!-- Hidden Layer 2 to Output -->
+    <line x1="520" y1="175" x2="630" y2="250" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="520" y1="275" x2="630" y2="250" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="520" y1="375" x2="630" y2="350" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+    <line x1="520" y1="475" x2="630" y2="350" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+  </g>
+
+  <!-- Pulsing Data Flow -->
+  <circle cx="225" cy="200" r="5" fill="#ffffff">
+    <animate attributeName="cx" values="150;300;500;650" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="200;250;275;250" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.8;0.6;0" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- AI Brain Icon -->
+  <g transform="translate(350, 50)">
+    <ellipse cx="50" cy="40" rx="50" ry="45" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="3"/>
+    <!-- Brain Waves -->
+    <path d="M 30 25 Q 35 20 40 25 T 50 25 T 60 25" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none"/>
+    <path d="M 30 35 Q 38 30 46 35 T 62 35" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none"/>
+    <path d="M 35 45 Q 42 40 49 45 T 63 45" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none"/>
+    <path d="M 38 55 Q 45 50 52 55 T 66 55" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Processing Indicator -->
+  <g transform="translate(100, 50)">
+    <rect x="0" y="0" width="100" height="20" rx="10" fill="rgba(255,255,255,0.2)"/>
+    <rect x="2" y="2" width="0" height="16" rx="8" fill="rgba(255,255,255,0.8)">
+      <animate attributeName="width" values="0;96;0" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

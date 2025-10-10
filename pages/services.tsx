@@ -19,6 +19,7 @@ export default function Services() {
       titleKey: 'services.categories.cloud.title',
       itemsKey: 'services.categories.cloud.items',
       color: '#00C4CC',
+      image: '/images/services/cloud.svg',
       delay: 0,
     },
     {
@@ -26,6 +27,7 @@ export default function Services() {
       titleKey: 'services.categories.compliance.title',
       itemsKey: 'services.categories.compliance.items',
       color: '#10B981',
+      image: '/images/services/compliance.svg',
       delay: 0.1,
     },
     {
@@ -33,6 +35,7 @@ export default function Services() {
       titleKey: 'services.categories.website.title',
       itemsKey: 'services.categories.website.items',
       color: '#3B82F6',
+      image: '/images/services/website.svg',
       delay: 0.2,
     },
     {
@@ -40,6 +43,7 @@ export default function Services() {
       titleKey: 'services.categories.marketing.title',
       itemsKey: 'services.categories.marketing.items',
       color: '#8B5CF6',
+      image: '/images/services/marketing.svg',
       delay: 0.3,
     },
     {
@@ -47,6 +51,7 @@ export default function Services() {
       titleKey: 'services.categories.ai.title',
       itemsKey: 'services.categories.ai.items',
       color: '#EC4899',
+      image: '/images/services/ai.svg',
       delay: 0.4,
     },
     {
@@ -54,6 +59,7 @@ export default function Services() {
       titleKey: 'services.categories.integration.title',
       itemsKey: 'services.categories.integration.items',
       color: '#F59E0B',
+      image: '/images/services/integration.svg',
       delay: 0.5,
     },
     {
@@ -61,6 +67,7 @@ export default function Services() {
       titleKey: 'services.categories.ecommerce.title',
       itemsKey: 'services.categories.ecommerce.items',
       color: '#EF4444',
+      image: '/images/services/ecommerce.svg',
       delay: 0.6,
     },
     {
@@ -68,6 +75,7 @@ export default function Services() {
       titleKey: 'services.categories.consulting.title',
       itemsKey: 'services.categories.consulting.items',
       color: '#06B6D4',
+      image: '/images/services/consulting.svg',
       delay: 0.7,
     },
   ]
@@ -106,6 +114,7 @@ export default function Services() {
                 title={t(category.titleKey)}
                 Icon={category.Icon}
                 color={category.color}
+                image={category.image}
                 delay={category.delay}
               />
             ))}

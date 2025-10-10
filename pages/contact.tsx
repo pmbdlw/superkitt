@@ -8,6 +8,7 @@ import { Mail, MessageSquare, CheckCircle } from 'lucide-react'
 import Layout from '@/components/Layout'
 import Card from '@/components/Card'
 import Button from '@/components/Button'
+import Banner from '@/components/Banner'
 
 interface ContactFormData {
   name: string
@@ -58,23 +59,14 @@ export default function Contact() {
   return (
     <Layout title={`${t('contact.title')} - ${t('company_name')}`} description={t('tagline')}>
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-primary to-accent text-white py-32 pt-40">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t('contact.title')}
-            </h1>
-            <p className="text-xl text-gray-200">
-              {t('tagline')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Banner
+        title={t('contact.title')}
+        subtitle="SuperKITT"
+        description={t('tagline')}
+        gradient="from-primary to-accent"
+        height="medium"
+        animationStyle="wave"
+      />
 
       {/* Contact Form and Info */}
       <section className="py-20 bg-gray-50">

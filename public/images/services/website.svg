@@ -1,0 +1,62 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="websiteBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#websiteBg)"/>
+
+  <pattern id="websiteGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="600" fill="url(#websiteGrid)"/>
+
+  <!-- Browser Window -->
+  <rect x="150" y="120" width="500" height="350" rx="10" fill="rgba(255,255,255,0.95)"/>
+
+  <!-- Browser Header -->
+  <rect x="150" y="120" width="500" height="40" rx="10" fill="rgba(59,130,246,0.3)"/>
+  <circle cx="175" cy="140" r="6" fill="#EF4444"/>
+  <circle cx="195" cy="140" r="6" fill="#F59E0B"/>
+  <circle cx="215" cy="140" r="6" fill="#10B981"/>
+
+  <!-- URL Bar -->
+  <rect x="250" y="130" width="350" height="20" rx="10" fill="white"/>
+  <circle cx="265" cy="140" r="5" fill="#3B82F6"/>
+
+  <!-- Website Content -->
+  <!-- Header -->
+  <rect x="180" y="180" width="440" height="30" rx="5" fill="#3B82F6" opacity="0.3"/>
+
+  <!-- Navigation -->
+  <rect x="180" y="225" width="80" height="12" rx="3" fill="#3B82F6" opacity="0.5"/>
+  <rect x="275" y="225" width="80" height="12" rx="3" fill="#3B82F6" opacity="0.5"/>
+  <rect x="370" y="225" width="80" height="12" rx="3" fill="#3B82F6" opacity="0.5"/>
+
+  <!-- Content Boxes -->
+  <rect x="180" y="260" width="130" height="100" rx="5" fill="#3B82F6" opacity="0.2"/>
+  <rect x="325" y="260" width="130" height="100" rx="5" fill="#3B82F6" opacity="0.2"/>
+  <rect x="470" y="260" width="130" height="100" rx="5" fill="#3B82F6" opacity="0.2"/>
+
+  <!-- Text Lines -->
+  <rect x="190" y="280" width="110" height="6" rx="3" fill="#3B82F6" opacity="0.4"/>
+  <rect x="190" y="295" width="90" height="6" rx="3" fill="#3B82F6" opacity="0.3"/>
+  <rect x="335" y="280" width="110" height="6" rx="3" fill="#3B82F6" opacity="0.4"/>
+  <rect x="335" y="295" width="90" height="6" rx="3" fill="#3B82F6" opacity="0.3"/>
+  <rect x="480" y="280" width="110" height="6" rx="3" fill="#3B82F6" opacity="0.4"/>
+  <rect x="480" y="295" width="90" height="6" rx="3" fill="#3B82F6" opacity="0.3"/>
+
+  <!-- Footer -->
+  <rect x="180" y="420" width="440" height="30" rx="5" fill="#3B82F6" opacity="0.2"/>
+
+  <!-- Code Brackets -->
+  <text x="100" y="300" font-family="monospace" font-size="80" fill="rgba(255,255,255,0.3)" font-weight="bold">&lt;/&gt;</text>
+  <text x="660" y="300" font-family="monospace" font-size="80" fill="rgba(255,255,255,0.3)" font-weight="bold">&lt;/&gt;</text>
+
+  <!-- Animated Cursor -->
+  <circle cx="300" cy="320" r="4" fill="#3B82F6">
+    <animate attributeName="cx" values="300;450;300" dur="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>

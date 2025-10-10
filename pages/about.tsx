@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { Target, Award } from 'lucide-react'
 import Layout from '@/components/Layout'
 import Card from '@/components/Card'
+import Banner from '@/components/Banner'
 
 export default function About() {
   const { t } = useTranslation('common')
@@ -15,23 +16,14 @@ export default function About() {
   return (
     <Layout title={`${t('about.title')} - ${t('company_name')}`} description={t('about.description')}>
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-primary to-accent text-white py-32 pt-40">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t('about.title')}
-            </h1>
-            <p className="text-xl text-gray-200">
-              {t('tagline')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Banner
+        title={t('about.title')}
+        subtitle="SuperKITT"
+        description={t('tagline')}
+        gradient="from-primary to-accent"
+        height="medium"
+        animationStyle="particle"
+      />
 
       {/* About Content */}
       <section className="py-20 bg-white">

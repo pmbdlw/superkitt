@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
@@ -14,12 +15,12 @@ export default function Cases() {
   const caseStudies = [
     {
       key: 'case1',
-      gradient: 'from-blue-500 to-cyan-600',
+      image: '/images/cases/case1.svg',
       delay: 0,
     },
     {
       key: 'case2',
-      gradient: 'from-purple-500 to-pink-600',
+      image: '/images/cases/case2.svg',
       delay: 0.2,
     },
   ]
@@ -42,8 +43,14 @@ export default function Cases() {
             {caseStudies.map((caseStudy) => (
               <Card key={caseStudy.key} delay={caseStudy.delay}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Case Visual with Gradient */}
-                  <div className={`relative h-64 lg:h-auto rounded-lg overflow-hidden bg-gradient-to-br ${caseStudy.gradient}`}>
+                  {/* Case Visual with Image */}
+                  <div className="relative h-64 lg:h-auto rounded-lg overflow-hidden">
+                    <Image
+                      src={caseStudy.image}
+                      alt={t(`cases.${caseStudy.key}.client`)}
+                      fill
+                      className="object-cover"
+                    />
                     {/* Animated Pattern Overlay */}
                     <motion.div
                       className="absolute inset-0 opacity-20"

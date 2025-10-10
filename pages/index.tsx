@@ -73,8 +73,9 @@ export default function Home() {
         title={t('hero.headline')}
         subtitle="SuperKITT"
         description={t('hero.subheadline')}
-        gradient="from-primary via-accent to-primary"
+        image="/images/banners/hero.svg"
         height="large"
+        animationStyle="particle"
       >
         <Link href="/contact">
           <Button size="lg" className="bg-secondary hover:bg-secondary/90">
