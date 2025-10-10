@@ -1,11 +1,13 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
 import { AlertCircle, Lightbulb, TrendingUp } from 'lucide-react'
 import Layout from '@/components/Layout'
 import Card from '@/components/Card'
+import Banner from '@/components/Banner'
 
 export default function Cases() {
   const { t } = useTranslation('common')
@@ -13,10 +15,12 @@ export default function Cases() {
   const caseStudies = [
     {
       key: 'case1',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
       delay: 0,
     },
     {
       key: 'case2',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
       delay: 0.2,
     },
   ]
@@ -24,23 +28,13 @@ export default function Cases() {
   return (
     <Layout title={`${t('cases.title')} - ${t('company_name')}`} description={t('tagline')}>
       {/* Page Header */}
-      <section className="bg-gradient-to-br from-primary to-accent text-white py-32 pt-40">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t('cases.title')}
-            </h1>
-            <p className="text-xl text-gray-200">
-              {t('tagline')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <Banner
+        title={t('cases.title')}
+        subtitle="SuperKITT"
+        description={t('tagline')}
+        image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
+        height="medium"
+      />
 
       {/* Case Studies */}
       <section className="py-20 bg-gray-50">
@@ -48,54 +42,64 @@ export default function Cases() {
           <div className="space-y-12">
             {caseStudies.map((caseStudy) => (
               <Card key={caseStudy.key} delay={caseStudy.delay}>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                  {/* Problem */}
-                  <div>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <AlertCircle className="w-6 h-6 text-red-500" />
-                      <h3 className="text-lg font-semibold text-primary">
-                        {t('cases.case1.client').includes('A') ? '问题' : 'Problem'}
-                      </h3>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Case Image */}
+                  <div className="relative h-64 lg:h-auto rounded-lg overflow-hidden">
+                    <Image
+                      src={caseStudy.image}
+                      alt={t(`cases.${caseStudy.key}.client`)}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-white font-semibold text-lg">
+                        {t(`cases.${caseStudy.key}.client`)}
+                      </p>
                     </div>
-                    <p className="text-gray-700">
-                      {t(`cases.${caseStudy.key}.problem`)}
-                    </p>
                   </div>
 
-                  {/* Solution */}
-                  <div>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <Lightbulb className="w-6 h-6 text-yellow-500" />
-                      <h3 className="text-lg font-semibold text-primary">
-                        {t('cases.case1.client').includes('A') ? '解决方案' : 'Solution'}
-                      </h3>
+                  {/* Case Content */}
+                  <div className="space-y-6">
+                    {/* Problem */}
+                    <div>
+                      <div className="flex items-center space-x-2 mb-3">
+                        <AlertCircle className="w-6 h-6 text-red-500" />
+                        <h3 className="text-lg font-semibold text-primary">
+                          {t('cases.case1.client').includes('A') ? '问题' : 'Problem'}
+                        </h3>
+                      </div>
+                      <p className="text-gray-700">
+                        {t(`cases.${caseStudy.key}.problem`)}
+                      </p>
                     </div>
-                    <p className="text-gray-700">
-                      {t(`cases.${caseStudy.key}.solution`)}
-                    </p>
-                  </div>
 
-                  {/* Result */}
-                  <div>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <TrendingUp className="w-6 h-6 text-green-500" />
-                      <h3 className="text-lg font-semibold text-primary">
-                        {t('cases.case1.client').includes('A') ? '成果' : 'Result'}
-                      </h3>
+                    {/* Solution */}
+                    <div>
+                      <div className="flex items-center space-x-2 mb-3">
+                        <Lightbulb className="w-6 h-6 text-yellow-500" />
+                        <h3 className="text-lg font-semibold text-primary">
+                          {t('cases.case1.client').includes('A') ? '解决方案' : 'Solution'}
+                        </h3>
+                      </div>
+                      <p className="text-gray-700">
+                        {t(`cases.${caseStudy.key}.solution`)}
+                      </p>
                     </div>
-                    <p className="text-gray-700">
-                      {t(`cases.${caseStudy.key}.result`)}
-                    </p>
-                  </div>
-                </div>
 
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <p className="text-sm text-gray-500">
-                    {t('cases.case1.client').includes('A') ? '客户：' : 'Client: '}
-                    <span className="font-semibold text-gray-700">
-                      {t(`cases.${caseStudy.key}.client`)}
-                    </span>
-                  </p>
+                    {/* Result */}
+                    <div>
+                      <div className="flex items-center space-x-2 mb-3">
+                        <TrendingUp className="w-6 h-6 text-green-500" />
+                        <h3 className="text-lg font-semibold text-primary">
+                          {t('cases.case1.client').includes('A') ? '成果' : 'Result'}
+                        </h3>
+                      </div>
+                      <p className="text-gray-700">
+                        {t(`cases.${caseStudy.key}.result`)}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Card>
             ))}

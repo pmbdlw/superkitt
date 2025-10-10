@@ -73,6 +73,7 @@ export default function Home() {
         title={t('hero.headline')}
         subtitle="SuperKITT"
         description={t('hero.subheadline')}
+        image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80"
         height="large"
       >
         <Link href="/contact">
