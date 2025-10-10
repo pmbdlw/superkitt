@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { Menu, X, Globe } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Logo from './Logo'
 
 export default function Navigation() {
   const { t } = useTranslation('common')
@@ -39,10 +40,8 @@ export default function Navigation() {
       }`}
     >
       <div className="container-custom flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className={`text-2xl font-bold transition-colors ${isScrolled ? 'text-primary' : 'text-white'}`}>
-            {t('company_name')}
-          </span>
+        <Link href="/" className="flex items-center">
+          <Logo isDark={isScrolled} showText={true} />
         </Link>
 
         {/* Desktop Navigation */}
