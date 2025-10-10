@@ -1,28 +1,35 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle cx="16" cy="16" r="15" fill="#0A1F44"/>
+  <!-- Background -->
+  <rect width="32" height="32" fill="#0A1F44" rx="4"/>
 
-  <!-- KITT car silhouette -->
-  <path d="M6 16C6 13.5 7.5 11.5 9.5 10.5L11.5 9.5H20.5L22.5 10.5C24.5 11.5 26 13.5 26 16V18.5C26 19.5 25 20.5 24 20.5H8C7 20.5 6 19.5 6 18.5V16Z"
+  <!-- Simplified KITT car body - filled for better visibility -->
+  <path d="M7 16C7 14 8 12.5 10 11.5L12 10.5H20L22 11.5C24 12.5 25 14 25 16V19C25 20 24 21 23 21H9C8 21 7 20 7 19V16Z"
+        fill="#00C4CC"
+        fill-opacity="0.3"/>
+  <path d="M7 16C7 14 8 12.5 10 11.5L12 10.5H20L22 11.5C24 12.5 25 14 25 16V19C25 20 24 21 23 21H9C8 21 7 20 7 19V16Z"
         stroke="#00C4CC"
-        stroke-width="1"
+        stroke-width="1.5"
         stroke-linecap="round"
-        stroke-linejoin="round"
-        fill="none"/>
+        stroke-linejoin="round"/>
 
-  <!-- KITT scanner - red bars -->
-  <rect x="10.5" y="15" width="1.5" height="2.5" fill="#FF0000" opacity="0.5"/>
-  <rect x="12.5" y="14.5" width="1.5" height="3.5" fill="#FF0000" opacity="0.7"/>
-  <rect x="14.5" y="14" width="1.5" height="4.5" fill="#FF0000" opacity="0.9"/>
-  <rect x="16.5" y="14" width="1.5" height="4.5" fill="#FF0000"/>
-  <rect x="18.5" y="14.5" width="1.5" height="3.5" fill="#FF0000" opacity="0.7"/>
-  <rect x="20.5" y="15" width="1.5" height="2.5" fill="#FF0000" opacity="0.5"/>
+  <!-- KITT scanner - larger, more visible red bars -->
+  <rect x="9" y="14.5" width="2" height="3" fill="#FF0000" rx="0.5"/>
+  <rect x="11.5" y="14" width="2" height="4" fill="#FF0000" rx="0.5"/>
+  <rect x="14" y="13.5" width="2" height="5" fill="#FF0000" rx="0.5"/>
+  <rect x="16.5" y="13.5" width="2" height="5" fill="#FF0000" rx="0.5"/>
+  <rect x="19" y="14" width="2" height="4" fill="#FF0000" rx="0.5"/>
+  <rect x="21.5" y="14.5" width="2" height="3" fill="#FF0000" rx="0.5"/>
 
-  <!-- Headlights -->
-  <circle cx="9.5" cy="13" r="0.8" fill="#00C4CC"/>
-  <circle cx="22.5" cy="13" r="0.8" fill="#00C4CC"/>
+  <!-- Headlights - larger circles -->
+  <circle cx="10" cy="12.5" r="1.2" fill="#FFF"/>
+  <circle cx="22" cy="12.5" r="1.2" fill="#FFF"/>
 
-  <!-- Wheels -->
-  <circle cx="10.5" cy="20.5" r="2.5" stroke="#00C4CC" stroke-width="1" fill="none"/>
-  <circle cx="21.5" cy="20.5" r="2.5" stroke="#00C4CC" stroke-width="1" fill="none"/>
+  <!-- Wheels - simplified -->
+  <circle cx="11" cy="21" r="2.5" fill="#00C4CC"/>
+  <circle cx="11" cy="21" r="1.5" fill="#0A1F44"/>
+  <circle cx="21" cy="21" r="2.5" fill="#00C4CC"/>
+  <circle cx="21" cy="21" r="1.5" fill="#0A1F44"/>
+
+  <!-- Bottom accent line -->
+  <line x1="9" y1="21" x2="23" y2="21" stroke="#00C4CC" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
