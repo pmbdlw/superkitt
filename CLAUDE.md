@@ -85,7 +85,7 @@ npm run type-check   # TypeScript type checking (if TS is used)
 **Contact Form:**
 - Fields: Name, Email, Company, Requirements
 - Submit to webhook or email
-- Email: service@superkitt.comsuperkitt.com
+- Email: service@superkitt.com
 
 **Performance:**
 - Mobile-responsive design
