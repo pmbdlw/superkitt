@@ -129,7 +129,6 @@ structure:
             email: "service@superkitt.com"
             social:
               - linkedin: "https://linkedin.com/company/superkitt"
-              - wechat_qr: "wechat_qr.png"
     - name: "Privacy"
       path: "/privacy"
       sections:

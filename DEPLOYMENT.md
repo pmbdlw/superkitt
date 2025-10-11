@@ -154,7 +154,7 @@ npm run lint
 
 - [ ] `/public/favicon.ico` - 网站图标
 - [ ] `/public/og-image.png` - Open Graph 图片 (1200x630px)
-- [ ] `/public/wechat_qr.png` - 微信二维码
+- ~~[ ] `/public/wechat_qr.png` - 微信二维码~~
 
 ## 联系方式
 

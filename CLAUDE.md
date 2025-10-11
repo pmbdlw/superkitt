@@ -103,4 +103,4 @@ npm run type-check   # TypeScript type checking (if TS is used)
 
 - Full project specification: `project.yaml:1-171`
 - Partner logos needed: AWS, Azure, Cloudflare, OpenAI
-- WeChat QR code asset: `wechat_qr.png` (to be added)
+- ~~WeChat QR code asset: `wechat_qr.png` (to be added)~~

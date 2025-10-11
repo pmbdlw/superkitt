@@ -174,7 +174,6 @@ vercel
 待添加的资源：
 - `/public/favicon.ico` - 网站图标
 - `/public/og-image.png` - Open Graph 图片
-- `/public/wechat_qr.png` - 微信二维码
 
 ## 维护与更新
 

@@ -185,7 +185,7 @@ export default function Contact() {
                 </div>
               </Card>
 
-              <Card>
+              {/* <Card>
                 <div className="flex items-start space-x-4">
                   <MessageSquare className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
                   <div>
@@ -197,7 +197,7 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-              </Card>
+              </Card> */}
             </div>
           </div>
         </div>

@@ -65,7 +65,7 @@ export default function Navigation() {
           >
             <Globe className={`w-5 h-5 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />
             <span className={`font-medium ${isScrolled ? 'text-gray-700' : 'text-white'}`}>
-              {router.locale === 'zh' ? 'EN' : '中文'}
+              {router.locale === 'zh' ? 'EN' : 'CN'}
             </span>
           </button>
         </div>
@@ -108,7 +108,7 @@ export default function Navigation() {
                 className="flex items-center space-x-2 py-2 text-gray-700 hover:text-secondary transition-colors"
               >
                 <Globe className="w-5 h-5" />
-                <span>{router.locale === 'zh' ? 'English' : '中文'}</span>
+                <span>{router.locale === 'zh' ? 'English' : 'Chinese'}</span>
               </button>
             </div>
           </motion.div>

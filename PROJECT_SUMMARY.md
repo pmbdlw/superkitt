@@ -5,7 +5,7 @@
 **项目名称**: SuperKitt Official Website
 **项目类型**: 双语企业官网（中文/英文）
 **技术栈**: Next.js 14 + React + TypeScript + TailwindCSS
-**完成时间**: 2024
+**完成时间**: 2025
 **状态**: ✅ 开发完成，已通过所有测试
 
 ---
@@ -168,7 +168,7 @@ superkittsite/
 ### 待添加资源
 - [ ] `/public/favicon.ico` - 网站图标
 - [ ] `/public/og-image.png` - Open Graph 图片
-- [ ] `/public/wechat_qr.png` - 微信二维码
+- ~~[ ] `/public/wechat_qr.png` - 微信二维码~~
 
 ### Webhook 配置选项
 - Zapier
@@ -310,7 +310,7 @@ npm run type-check   # TypeScript 类型检查
 1. **添加资源文件**
    - 上传 favicon.ico
    - 创建 og-image.png (1200x630px)
-   - 添加 wechat_qr.png
+   - ~~添加 wechat_qr.png~~
 
 2. **配置 Webhook**
    - 选择 Webhook 服务（Zapier/Make.com）
@@ -345,5 +345,5 @@ npm run type-check   # TypeScript 类型检查
 
 ---
 
-*生成时间: 2024-10-10*
+*生成时间: 2025-10-10*
 *项目版本: 1.0.0*
