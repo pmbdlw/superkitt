@@ -91,6 +91,9 @@
   },
   "cases": {
     "title": "Case Studies",
+    "problem_label": "Problem",
+    "solution_label": "Solution",
+    "result_label": "Result",
     "case1": {
       "client": "Cross-border E-commerce Company A",
       "problem": "Slow website access speed overseas, affecting user experience and conversion rates",

@@ -91,6 +91,9 @@
   },
   "cases": {
     "title": "客户案例",
+    "problem_label": "问题",
+    "solution_label": "解决方案",
+    "result_label": "成果",
     "case1": {
       "client": "跨境电商A公司",
       "problem": "网站在海外访问速度慢，影响用户体验和转化率",

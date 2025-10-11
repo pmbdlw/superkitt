@@ -88,7 +88,7 @@ export default function Cases() {
                       <div className="flex items-center space-x-2 mb-3">
                         <AlertCircle className="w-6 h-6 text-red-500" />
                         <h3 className="text-lg font-semibold text-primary">
-                          {t('cases.case1.client').includes('A') ? '问题' : 'Problem'}
+                          {t('cases.problem_label')}
                         </h3>
                       </div>
                       <p className="text-gray-700">
@@ -101,7 +101,7 @@ export default function Cases() {
                       <div className="flex items-center space-x-2 mb-3">
                         <Lightbulb className="w-6 h-6 text-yellow-500" />
                         <h3 className="text-lg font-semibold text-primary">
-                          {t('cases.case1.client').includes('A') ? '解决方案' : 'Solution'}
+                          {t('cases.solution_label')}
                         </h3>
                       </div>
                       <p className="text-gray-700">
@@ -114,7 +114,7 @@ export default function Cases() {
                       <div className="flex items-center space-x-2 mb-3">
                         <TrendingUp className="w-6 h-6 text-green-500" />
                         <h3 className="text-lg font-semibold text-primary">
-                          {t('cases.case1.client').includes('A') ? '成果' : 'Result'}
+                          {t('cases.result_label')}
                         </h3>
                       </div>
                       <p className="text-gray-700">
