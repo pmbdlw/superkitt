@@ -95,6 +95,7 @@ export default function Logo({ className = '', showText = true, isDark = false }
             height="4"
             fill="#FF0000"
             rx="0"
+            initial={{ opacity: 0.3, height: 3 }}
             animate={{
               opacity: [0.3, 1, 0.3],
               height: [3, 5, 3],
@@ -114,6 +115,7 @@ export default function Logo({ className = '', showText = true, isDark = false }
             height="6"
             fill="#FF0000"
             rx="0"
+            initial={{ opacity: 0.5, height: 5 }}
             animate={{
               opacity: [0.5, 1, 0.5],
               height: [5, 7, 5],
@@ -134,6 +136,7 @@ export default function Logo({ className = '', showText = true, isDark = false }
             height="8"
             fill="#FF0000"
             rx="0"
+            initial={{ opacity: 0.8, height: 7 }}
             animate={{
               opacity: [0.8, 1, 0.8],
               height: [7, 9, 7],
@@ -154,6 +157,7 @@ export default function Logo({ className = '', showText = true, isDark = false }
             height="6"
             fill="#FF0000"
             rx="0"
+            initial={{ opacity: 0.5, height: 5 }}
             animate={{
               opacity: [0.5, 1, 0.5],
               height: [5, 7, 5],
@@ -174,6 +178,7 @@ export default function Logo({ className = '', showText = true, isDark = false }
             height="4"
             fill="#FF0000"
             rx="0"
+            initial={{ opacity: 0.3, height: 3 }}
             animate={{
               opacity: [0.3, 1, 0.3],
               height: [3, 5, 3],
