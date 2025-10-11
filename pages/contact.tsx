@@ -176,7 +176,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-primary mb-2">Email</h3>
                     <a
-                      href="mailto:contact@superkitt.com"
+                      href="mailto:service@superkitt.comsuperkitt.com"
                       className="text-gray-700 hover:text-secondary transition-colors"
                     >
                       {t('contact.info.email')}

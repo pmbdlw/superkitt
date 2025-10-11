@@ -126,7 +126,7 @@ structure:
               - 需求说明
             submit_to: "webhook or email"
         - info:
-            email: "contact@superkitt.com"
+            email: "service@superkitt.comsuperkitt.com"
             social:
               - linkedin: "https://linkedin.com/company/superkitt"
               - wechat_qr: "wechat_qr.png"

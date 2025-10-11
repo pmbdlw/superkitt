@@ -43,9 +43,9 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('nav.contact')}</h4>
             <div className="space-y-2">
-              <a href="mailto:contact@superkitt.com" className="flex items-center space-x-2 text-gray-300 hover:text-secondary transition-colors">
+              <a href="mailto:service@superkitt.comsuperkitt.com" className="flex items-center space-x-2 text-gray-300 hover:text-secondary transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>contact@superkitt.com</span>
+                <span>service@superkitt.comsuperkitt.com</span>
               </a>
               <a href="https://linkedin.com/company/superkitt" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-300 hover:text-secondary transition-colors">
                 <Linkedin className="w-5 h-5" />

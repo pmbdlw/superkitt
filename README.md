@@ -196,4 +196,4 @@ vercel
 
 ## License
 
-© 2024 SuperKitt. All rights reserved.
+© 2025 SuperKitt. All rights reserved.

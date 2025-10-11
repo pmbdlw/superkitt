@@ -299,7 +299,7 @@ npm run type-check   # TypeScript 类型检查
 
 ## 📞 联系方式
 
-- **Email**: contact@superkitt.com
+- **Email**: service@superkitt.comsuperkitt.com
 - **LinkedIn**: https://linkedin.com/company/superkitt
 - **Website**: https://superkitt.com
 
