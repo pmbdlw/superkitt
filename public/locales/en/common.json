@@ -98,11 +98,11 @@
       "client": "Cross-border E-commerce Company A",
       "problem": "Slow website access speed overseas, affecting user experience and conversion rates",
       "solution": "Deployed global CDN acceleration solution using AWS CloudFront and edge computing optimization",
-      "result": "80% speed improvement, page load time reduced from 5 seconds to under 1 second, 35% conversion rate increase"
+      "result": "80% speed improvement, page load time reduced from 5 seconds to under 2 second, 35% conversion rate increase"
     },
     "case2": {
       "client": "SaaS Startup Team B",
-      "problem": "Needed to quickly enter the European market but lacked GDPR compliance experience and multilingual technical support",
+      "problem": "Needed to quickly enter the global market but lacked GDPR compliance experience and multilingual technical support",
       "solution": "Built GDPR-compliant multilingual website, implemented data encryption and user privacy protection solutions",
       "result": "Successfully passed GDPR audit, acquired 5000+ European users in 3 months, 92% user satisfaction"
     }
