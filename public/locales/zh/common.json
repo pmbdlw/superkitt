@@ -11,13 +11,16 @@
   "hero": {
     "headline": "中国企业出海的一站式IT解决方案",
     "subheadline": "从云架构、数据安全到AI赋能，我们助力您的全球化进程",
-    "cta": "立即咨询"
+    "cta": "立即咨询",
+    "cta_secondary": "了解更多"
   },
   "services": {
     "title": "我们的服务",
+    "label": "服务内容",
     "categories": {
       "cloud": {
         "title": "全球云与架构服务",
+        "description": "在AWS、Azure和GCP上部署、扩展和优化您的云基础设施，实现全球覆盖。",
         "items": [
           "海外云平台部署（AWS / Azure / GCP）",
           "CDN与加速方案（Cloudflare、Akamai）",
@@ -27,6 +30,7 @@
       },
       "compliance": {
         "title": "合规与安全",
+        "description": "自信应对国际法规。GDPR、SOC 2和ISO27001合规变得简单。",
         "items": [
           "GDPR / SOC 2 / ISO27001 合规咨询",
           "数据出境与加密方案",
@@ -35,6 +39,7 @@
       },
       "website": {
         "title": "网站与应用出海",
+        "description": "构建多语言、高性能的网站，与全球受众产生共鸣。",
         "items": [
           "多语言官网建设（Next.js / WordPress）",
           "海外SEO与内容优化",
@@ -43,6 +48,7 @@
       },
       "marketing": {
         "title": "营销与自动化",
+        "description": "通过精准广告投放、CRM集成和邮件营销触达国际客户。",
         "items": [
           "海外广告追踪系统（Google Ads / Meta）",
           "营销自动化与CRM集成",
@@ -51,6 +57,7 @@
       },
       "ai": {
         "title": "AI与智能化",
+        "description": "利用GPT驱动的聊天机器人、文档处理和定制AI助手赋能您的业务。",
         "items": [
           "多语言客服机器人（GPT驱动）",
           "文档识别与数据提取",
@@ -59,6 +66,7 @@
       },
       "integration": {
         "title": "系统集成与数据服务",
+        "description": "通过统一的数据管道和看板连接您的ERP、CRM和电商系统。",
         "items": [
           "ERP / CRM / 电商系统对接",
           "数据管道与可视化"
@@ -66,6 +74,7 @@
       },
       "ecommerce": {
         "title": "跨境电商技术服务",
+        "description": "搭建和优化独立站，支持多币种和数据分析。",
         "items": [
           "Shopify / WooCommerce 独立站搭建",
           "多币种支持与支付集成",
@@ -74,6 +83,7 @@
       },
       "consulting": {
         "title": "技术外包与咨询",
+        "description": "按需获得经验丰富的技术团队、架构评审和国际技术支持。",
         "items": [
           "技术团队外包",
           "架构评估与优化",
@@ -82,16 +92,23 @@
       }
     }
   },
+  "stats": {
+    "clients": "服务客户",
+    "categories": "服务类目",
+    "coverage": "全球覆盖",
+    "satisfaction": "客户满意度"
+  },
   "partners": {
     "title": "我们的合作伙伴"
   },
   "cta": {
-    "text": "准备好出海了吗？联系我们的技术专家。",
+    "text": "准备好出海了吗？",
+    "description": "联系我们的技术专家，开启您的国际化扩展之旅。",
     "button": "联系SuperKitt"
   },
   "cases": {
     "title": "客户案例",
-    "problem_label": "问题",
+    "problem_label": "挑战",
     "solution_label": "解决方案",
     "result_label": "成果",
     "case1": {
@@ -112,27 +129,49 @@
     "description": "SuperKitt致力于成为中国企业出海的技术中枢。我们专注于海外云架构、数据安全、网站出海、AI赋能与系统集成。",
     "mission_title": "我们的使命",
     "mission": "用技术让中国企业的全球化更简单、更安全、更智能。",
+    "vision_title": "我们的愿景",
+    "vision": "成为中国企业国际化扩展最值得信赖的技术合作伙伴，弥合创新与全球合规之间的鸿沟。",
     "partners_title": "技术合作伙伴"
   },
   "contact": {
     "title": "联系我们",
+    "subtitle": "让我们讨论如何帮助您的企业走向全球。",
     "form": {
       "name": "姓名",
       "email": "邮箱",
       "company": "公司",
       "requirements": "需求说明",
-      "submit": "提交咨询"
+      "submit": "提交咨询",
+      "submitting": "提交中...",
+      "success": "提交成功！我们会尽快与您联系。",
+      "required": "此项为必填项"
     },
     "info": {
-      "email": "service@superkitt.com"
+      "email": "service@superkitt.com",
+      "email_label": "邮件联系",
+      "email_desc": "我们通常在24小时内回复。"
     }
   },
   "privacy": {
     "title": "隐私与合规",
-    "content": "SuperKitt遵守GDPR及各国数据保护法规，所有客户数据均在授权范围内安全存储与传输。我们提供定制化合规咨询服务，确保您的业务符合国际标准。"
+    "content": "SuperKitt遵守GDPR及各国数据保护法规，所有客户数据均在授权范围内安全存储与传输。我们提供定制化合规咨询服务，确保您的业务符合国际标准。",
+    "toc": "目录",
+    "data_protection_title": "数据保护原则",
+    "data_protection_items": [
+      "所有客户数据均采用行业标准加密技术保护",
+      "严格遵守GDPR、CCPA等国际数据保护法规",
+      "仅在授权范围内收集和使用客户信息",
+      "定期进行安全审计和漏洞扫描"
+    ],
+    "compliance_title": "合规服务",
+    "compliance_content": "SuperKitt 提供专业的合规咨询服务，帮助您的企业满足各国数据保护要求，包括GDPR合规审计、SOC 2认证准备、ISO27001体系建设等。"
   },
   "footer": {
     "copyright": "© 2025 SuperKitt. 保留所有权利。",
-    "description": "中国企业出海的一站式技术伙伴"
+    "description": "中国企业出海的一站式技术伙伴",
+    "services_label": "服务",
+    "company_label": "公司",
+    "contact_label": "联系方式",
+    "back_to_top": "回到顶部"
   }
 }

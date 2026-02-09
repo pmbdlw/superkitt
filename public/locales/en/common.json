@@ -11,13 +11,16 @@
   "hero": {
     "headline": "Complete IT Solutions for Chinese Enterprises Going Global",
     "subheadline": "From cloud architecture and data security to AI enablement, we empower your global expansion",
-    "cta": "Get Started"
+    "cta": "Get Started",
+    "cta_secondary": "Learn More"
   },
   "services": {
     "title": "Our Services",
+    "label": "What We Do",
     "categories": {
       "cloud": {
         "title": "Global Cloud & Architecture",
+        "description": "Deploy, scale, and optimize your cloud infrastructure across AWS, Azure, and GCP for global reach.",
         "items": [
           "Overseas cloud platform deployment (AWS / Azure / GCP)",
           "CDN & acceleration solutions (Cloudflare, Akamai)",
@@ -27,6 +30,7 @@
       },
       "compliance": {
         "title": "Compliance & Security",
+        "description": "Navigate international regulations with confidence. GDPR, SOC 2, and ISO27001 compliance made simple.",
         "items": [
           "GDPR / SOC 2 / ISO27001 compliance consulting",
           "Data cross-border & encryption solutions",
@@ -35,6 +39,7 @@
       },
       "website": {
         "title": "Website & Application Internationalization",
+        "description": "Build multilingual, high-performance websites that resonate with global audiences.",
         "items": [
           "Multilingual website development (Next.js / WordPress)",
           "International SEO & content optimization",
@@ -43,6 +48,7 @@
       },
       "marketing": {
         "title": "Marketing & Automation",
+        "description": "Reach international customers with targeted advertising, CRM integrations, and email campaigns.",
         "items": [
           "International advertising tracking (Google Ads / Meta)",
           "Marketing automation & CRM integration",
@@ -51,6 +57,7 @@
       },
       "ai": {
         "title": "AI & Intelligence",
+        "description": "Leverage GPT-powered chatbots, document processing, and custom AI assistants for your business.",
         "items": [
           "Multilingual customer service bots (GPT-powered)",
           "Document recognition & data extraction",
@@ -59,6 +66,7 @@
       },
       "integration": {
         "title": "System Integration & Data Services",
+        "description": "Connect your ERP, CRM, and e-commerce systems with unified data pipelines and dashboards.",
         "items": [
           "ERP / CRM / E-commerce system integration",
           "Data pipelines & visualization"
@@ -66,6 +74,7 @@
       },
       "ecommerce": {
         "title": "Cross-border E-commerce Technology",
+        "description": "Launch and optimize your independent stores with multi-currency support and analytics.",
         "items": [
           "Shopify / WooCommerce independent store setup",
           "Multi-currency support & payment integration",
@@ -74,6 +83,7 @@
       },
       "consulting": {
         "title": "Technical Outsourcing & Consulting",
+        "description": "Access experienced technical teams, architecture reviews, and international support on demand.",
         "items": [
           "Technical team outsourcing",
           "Architecture assessment & optimization",
@@ -82,16 +92,23 @@
       }
     }
   },
+  "stats": {
+    "clients": "Clients Served",
+    "categories": "Service Categories",
+    "coverage": "Global Coverage",
+    "satisfaction": "Satisfaction Rate"
+  },
   "partners": {
     "title": "Our Partners"
   },
   "cta": {
-    "text": "Ready to go global? Contact our technical experts.",
+    "text": "Ready to go global?",
+    "description": "Contact our technical experts and start your international expansion journey.",
     "button": "Contact SuperKitt"
   },
   "cases": {
     "title": "Case Studies",
-    "problem_label": "Problem",
+    "problem_label": "Challenge",
     "solution_label": "Solution",
     "result_label": "Result",
     "case1": {
@@ -112,27 +129,49 @@
     "description": "SuperKitt is dedicated to becoming the technology hub for Chinese enterprises going global. We focus on overseas cloud architecture, data security, website internationalization, AI enablement, and system integration.",
     "mission_title": "Our Mission",
     "mission": "Making global expansion simpler, safer, and smarter for Chinese enterprises through technology.",
+    "vision_title": "Our Vision",
+    "vision": "To be the most trusted technology partner for Chinese enterprises expanding internationally, bridging the gap between innovation and global compliance.",
     "partners_title": "Technology Partners"
   },
   "contact": {
     "title": "Contact Us",
+    "subtitle": "Let's discuss how we can help your business go global.",
     "form": {
       "name": "Name",
       "email": "Email",
       "company": "Company",
       "requirements": "Requirements",
-      "submit": "Submit Inquiry"
+      "submit": "Submit Inquiry",
+      "submitting": "Submitting...",
+      "success": "Success! We will contact you soon.",
+      "required": "This field is required"
     },
     "info": {
-      "email": "service@superkitt.com"
+      "email": "service@superkitt.com",
+      "email_label": "Email Us",
+      "email_desc": "We typically respond within 24 hours."
     }
   },
   "privacy": {
     "title": "Privacy & Compliance",
-    "content": "SuperKitt complies with GDPR and data protection regulations in all countries. All customer data is securely stored and transmitted within authorized scope. We provide customized compliance consulting services to ensure your business meets international standards."
+    "content": "SuperKitt complies with GDPR and data protection regulations in all countries. All customer data is securely stored and transmitted within authorized scope. We provide customized compliance consulting services to ensure your business meets international standards.",
+    "toc": "Table of Contents",
+    "data_protection_title": "Data Protection Principles",
+    "data_protection_items": [
+      "All client data is protected with industry-standard encryption",
+      "Strict compliance with GDPR, CCPA and other international data protection regulations",
+      "Collection and use of client information only within authorized scope",
+      "Regular security audits and vulnerability scanning"
+    ],
+    "compliance_title": "Compliance Services",
+    "compliance_content": "SuperKitt provides professional compliance consulting services to help your business meet data protection requirements in various countries, including GDPR compliance audits, SOC 2 certification preparation, ISO27001 system construction, and more."
   },
   "footer": {
     "copyright": "© 2025 SuperKitt. All rights reserved.",
-    "description": "Your Global IT Partner for Going Abroad"
+    "description": "Your Global IT Partner for Going Abroad",
+    "services_label": "Services",
+    "company_label": "Company",
+    "contact_label": "Contact",
+    "back_to_top": "Back to top"
   }
 }
