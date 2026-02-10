@@ -51,18 +51,18 @@ export default function Cases() {
                     {String(caseIndex + 1).padStart(2, '0')}
                   </span>
                   <div className="flex items-center gap-3 mb-6 relative z-10">
-                    <span className="text-xs font-medium tracking-label text-[#848484] uppercase">
+                    <span className="text-xs font-medium tracking-label text-muted uppercase">
                       {String(caseIndex + 1).padStart(2, '0')}
                     </span>
-                    <div className="h-px flex-1 bg-[#2A2A2A]" />
+                    <div className="h-px flex-1 bg-border" />
                   </div>
 
-                  <h3 className="text-3xl md:text-4xl font-medium text-white tracking-tight font-serif relative z-10">
+                  <h3 className="text-3xl md:text-4xl font-medium text-heading tracking-tight font-serif relative z-10">
                     {t(`cases.${caseStudy.key}.client`)}
                   </h3>
                 </div>
 
-                {/* Problem → Solution → Result */}
+                {/* Problem -> Solution -> Result */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {steps.map((step, stepIndex) => {
                     const contentKeys = ['problem', 'solution', 'result']
@@ -70,11 +70,11 @@ export default function Cases() {
                       <div key={stepIndex} className="dark-card">
                         <div className="flex items-center gap-3 mb-4">
                           <div className={`w-2 h-2 rounded-full ${step.color}`} />
-                          <span className="text-xs font-medium tracking-label text-[#848484] uppercase">
+                          <span className="text-xs font-medium tracking-label text-muted uppercase">
                             {t(step.labelKey)}
                           </span>
                         </div>
-                        <p className="text-sm text-[#848484] leading-relaxed">
+                        <p className="text-sm text-muted leading-relaxed">
                           {t(`cases.${caseStudy.key}.${contentKeys[stepIndex]}`)}
                         </p>
                       </div>
@@ -97,10 +97,10 @@ export default function Cases() {
             transition={{ duration: 0.6, ease: easeOutExpo }}
             className="flex flex-col items-center text-center gap-6 max-w-[800px] mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tight font-serif">
+            <h2 className="text-4xl md:text-5xl font-medium text-heading tracking-tight font-serif">
               {t('cta.text')}
             </h2>
-            <p className="text-lg text-[#848484] leading-relaxed">
+            <p className="text-lg text-muted leading-relaxed">
               {t('cta.description')}
             </p>
             <Link href="/contact" className="mt-4">

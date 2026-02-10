@@ -34,7 +34,7 @@ export default function About() {
               transition={{ duration: 0.6, ease: easeOutExpo }}
             >
               <p className="section-label mb-4">{t('about.title')}</p>
-              <p className="text-xl text-[#848484] leading-relaxed">
+              <p className="text-xl text-muted leading-relaxed">
                 {t('about.description')}
               </p>
             </motion.div>
@@ -50,7 +50,7 @@ export default function About() {
                 <h3 className="text-xs font-medium tracking-label uppercase text-gold mb-4">
                   {t('about.mission_title')}
                 </h3>
-                <p className="text-base text-white/90 font-medium leading-relaxed">
+                <p className="text-base text-heading/90 font-medium leading-relaxed">
                   {t('about.mission')}
                 </p>
               </motion.div>
@@ -62,10 +62,10 @@ export default function About() {
                 transition={{ duration: 0.6, delay: 0.1, ease: easeOutExpo }}
                 className="dark-card"
               >
-                <h3 className="text-xs font-medium tracking-label uppercase text-[#848484] mb-4">
+                <h3 className="text-xs font-medium tracking-label uppercase text-muted mb-4">
                   {t('about.vision_title')}
                 </h3>
-                <p className="text-base text-[#848484] leading-relaxed">
+                <p className="text-base text-muted leading-relaxed">
                   {t('about.vision')}
                 </p>
               </motion.div>
@@ -75,7 +75,7 @@ export default function About() {
       </section>
 
       {/* Partners */}
-      <section className="bg-surface py-20 border-t border-[#2A2A2A]">
+      <section className="bg-surface py-20 border-t border-border">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0 }}
@@ -94,9 +94,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, ease: easeOutExpo }}
-                className="flex items-center justify-center py-8 px-6 border border-[#2A2A2A] opacity-60 hover:opacity-100 transition-all duration-300"
+                className="flex items-center justify-center py-8 px-6 border border-border opacity-60 hover:opacity-100 transition-all duration-300"
               >
-                <span className="text-lg font-medium text-white tracking-tight">
+                <span className="text-lg font-medium text-heading tracking-tight">
                   {partner}
                 </span>
               </motion.div>
@@ -115,10 +115,10 @@ export default function About() {
             transition={{ duration: 0.6, ease: easeOutExpo }}
             className="flex flex-col items-center text-center gap-6 max-w-[800px] mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tight font-serif">
+            <h2 className="text-4xl md:text-5xl font-medium text-heading tracking-tight font-serif">
               {t('cta.text')}
             </h2>
-            <p className="text-lg text-[#848484] leading-relaxed">
+            <p className="text-lg text-muted leading-relaxed">
               {t('cta.description')}
             </p>
             <Link href="/contact" className="mt-4">

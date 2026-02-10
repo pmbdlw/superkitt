@@ -32,7 +32,7 @@ export default function Privacy() {
             {/* Table of Contents — sticky sidebar */}
             <aside className="hidden lg:block">
               <div className="sticky top-28">
-                <p className="text-xs font-medium tracking-label text-[#848484] uppercase mb-4">
+                <p className="text-xs font-medium tracking-label text-muted uppercase mb-4">
                   {t('privacy.toc')}
                 </p>
                 <nav className="space-y-3">
@@ -40,7 +40,7 @@ export default function Privacy() {
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="block text-sm text-[#848484] hover:text-gold transition-colors py-1"
+                      className="block text-sm text-muted hover:text-gold transition-colors py-1"
                     >
                       {section.label}
                     </a>
@@ -53,23 +53,23 @@ export default function Privacy() {
             <div className="lg:col-span-3 max-w-none">
               <article className="space-y-12">
                 <div id="overview">
-                  <h2 className="text-2xl font-medium text-white tracking-tight font-serif mb-4">
+                  <h2 className="text-2xl font-medium text-heading tracking-tight font-serif mb-4">
                     {t('privacy.title')}
                   </h2>
-                  <p className="text-base text-[#848484] leading-relaxed">
+                  <p className="text-base text-muted leading-relaxed">
                     {t('privacy.content')}
                   </p>
                 </div>
 
-                <hr className="border-[#2A2A2A]" />
+                <hr className="border-border" />
 
                 <div id="data-protection">
-                  <h2 className="text-xl font-medium text-white tracking-tight font-serif mb-4">
+                  <h2 className="text-xl font-medium text-heading tracking-tight font-serif mb-4">
                     {t('privacy.data_protection_title')}
                   </h2>
                   <ul className="space-y-3">
                     {dataProtectionItems.map((item, index) => (
-                      <li key={index} className="flex items-start gap-3 text-base text-[#848484]">
+                      <li key={index} className="flex items-start gap-3 text-base text-muted">
                         <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-2" />
                         <span>{item}</span>
                       </li>
@@ -77,24 +77,24 @@ export default function Privacy() {
                   </ul>
                 </div>
 
-                <hr className="border-[#2A2A2A]" />
+                <hr className="border-border" />
 
                 <div id="compliance">
-                  <h2 className="text-xl font-medium text-white tracking-tight font-serif mb-4">
+                  <h2 className="text-xl font-medium text-heading tracking-tight font-serif mb-4">
                     {t('privacy.compliance_title')}
                   </h2>
-                  <p className="text-base text-[#848484] leading-relaxed">
+                  <p className="text-base text-muted leading-relaxed">
                     {t('privacy.compliance_content')}
                   </p>
                 </div>
               </article>
 
               {/* Bottom CTA */}
-              <div className="mt-16 pt-12 border-t border-[#2A2A2A]">
-                <p className="text-lg font-medium text-white mb-2 font-serif">
+              <div className="mt-16 pt-12 border-t border-border">
+                <p className="text-lg font-medium text-heading mb-2 font-serif">
                   {t('cta.text')}
                 </p>
-                <p className="text-sm text-[#848484] mb-6">
+                <p className="text-sm text-muted mb-6">
                   {t('cta.description')}
                 </p>
                 <Link href="/contact">

@@ -55,7 +55,7 @@ export default function Contact() {
   }
 
   const inputClasses =
-    'w-full px-5 py-4 border border-[#2A2A2A] bg-transparent text-white text-sm focus:border-gold/50 focus:outline-none transition-colors duration-300 placeholder:text-[#6A6A6A]'
+    'w-full px-5 py-4 border border-border bg-transparent text-heading text-sm focus:border-gold/50 focus:outline-none transition-colors duration-300 placeholder:text-subtle'
 
   return (
     <Layout title={`${t('contact.title')} - ${t('company_name')}`} description={t('tagline')}>
@@ -91,7 +91,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white mb-3">
+                    <label htmlFor="name" className="block text-sm font-medium text-heading mb-3">
                       {t('contact.form.name')}
                     </label>
                     <input
@@ -106,7 +106,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white mb-3">
+                    <label htmlFor="email" className="block text-sm font-medium text-heading mb-3">
                       {t('contact.form.email')}
                     </label>
                     <input
@@ -122,7 +122,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-white mb-3">
+                  <label htmlFor="company" className="block text-sm font-medium text-heading mb-3">
                     {t('contact.form.company')}
                   </label>
                   <input
@@ -137,7 +137,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="requirements" className="block text-sm font-medium text-white mb-3">
+                  <label htmlFor="requirements" className="block text-sm font-medium text-heading mb-3">
                     {t('contact.form.requirements')}
                   </label>
                   <textarea
@@ -170,17 +170,17 @@ export default function Contact() {
                     <div className="w-[60px] h-[60px] border border-gold-muted flex items-center justify-center">
                       <Mail className="w-5 h-5 text-gold" />
                     </div>
-                    <h3 className="text-sm font-medium text-white">
+                    <h3 className="text-sm font-medium text-heading">
                       {t('contact.info.email_label')}
                     </h3>
                   </div>
                   <a
                     href="mailto:service@superkitt.com"
-                    className="text-sm text-[#848484] hover:text-gold transition-colors"
+                    className="text-sm text-muted hover:text-gold transition-colors"
                   >
                     {t('contact.info.email')}
                   </a>
-                  <p className="text-xs text-[#6A6A6A] mt-2">
+                  <p className="text-xs text-subtle mt-2">
                     {t('contact.info.email_desc')}
                   </p>
                 </div>

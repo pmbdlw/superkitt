@@ -150,13 +150,13 @@ export default function Home() {
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: easeOutExpo }}
                 className={`flex flex-col items-center gap-3 py-8 ${
-                  index > 0 && index < 3 ? 'border-x border-[#2A2A2A]' : ''
+                  index > 0 && index < 3 ? 'border-x border-border' : ''
                 }`}
               >
                 <p className="text-5xl md:text-6xl font-medium text-gold tracking-tight font-serif">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </p>
-                <p className="text-sm text-[#848484]">
+                <p className="text-sm text-muted">
                   {t(stat.labelKey)}
                 </p>
               </motion.div>
@@ -174,7 +174,7 @@ export default function Home() {
             viewport={{ once: true, margin: '-100px' }}
             className="text-center mb-12"
           >
-            <p className="text-xs text-[#6A6A6A] tracking-[1px]">{t('partners.title')}</p>
+            <p className="text-xs text-subtle tracking-[1px]">{t('partners.title')}</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -185,9 +185,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, ease: easeOutExpo }}
-                className="flex items-center justify-center py-8 px-6 border border-[#2A2A2A] opacity-60 hover:opacity-100 transition-all duration-300"
+                className="flex items-center justify-center py-8 px-6 border border-border opacity-60 hover:opacity-100 transition-all duration-300"
               >
-                <span className="text-lg font-medium text-white tracking-tight">
+                <span className="text-lg font-medium text-heading tracking-tight">
                   {partner}
                 </span>
               </motion.div>
@@ -207,10 +207,10 @@ export default function Home() {
             className="flex flex-col items-center text-center gap-10"
           >
             <div className="max-w-[800px] flex flex-col items-center gap-6">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight font-serif">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-heading tracking-tight font-serif">
                 {t('cta.text')}
               </h2>
-              <p className="text-lg text-[#848484] leading-relaxed">
+              <p className="text-lg text-muted leading-relaxed">
                 {t('cta.description')}
               </p>
             </div>
@@ -225,9 +225,9 @@ export default function Home() {
               </Link>
             </div>
             <div className="flex items-center gap-8 opacity-70">
-              <span className="text-xs text-[#6A6A6A]">ISO 27001</span>
-              <span className="text-xs text-[#6A6A6A]">SOC 2</span>
-              <span className="text-xs text-[#6A6A6A]">GDPR</span>
+              <span className="text-xs text-subtle">ISO 27001</span>
+              <span className="text-xs text-subtle">SOC 2</span>
+              <span className="text-xs text-subtle">GDPR</span>
             </div>
           </motion.div>
         </div>

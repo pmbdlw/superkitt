@@ -58,7 +58,7 @@ export default function Services() {
                   transition={{ duration: 0.6, ease: easeOutExpo }}
                 >
                   {index > 0 && (
-                    <div className="mb-16 h-px bg-[#2A2A2A]" />
+                    <div className="mb-16 h-px bg-border" />
                   )}
 
                   <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start`}>
@@ -67,14 +67,14 @@ export default function Services() {
                         <div className="w-[60px] h-[60px] border border-gold-muted flex items-center justify-center">
                           <Icon size={28} className="text-gold" strokeWidth={1.5} />
                         </div>
-                        <span className="text-xs font-medium tracking-label text-[#848484] uppercase">
+                        <span className="text-xs font-medium tracking-label text-muted uppercase">
                           {String(index + 1).padStart(2, '0')}
                         </span>
                       </div>
-                      <h3 className="text-2xl font-medium text-white tracking-tight font-serif">
+                      <h3 className="text-2xl font-medium text-heading tracking-tight font-serif">
                         {t(category.titleKey)}
                       </h3>
-                      <p className="text-sm text-[#848484] mt-3 leading-relaxed">
+                      <p className="text-sm text-muted mt-3 leading-relaxed">
                         {t(category.descKey)}
                       </p>
                     </div>
@@ -82,7 +82,7 @@ export default function Services() {
                     <div className={`lg:col-span-8 ${isReversed ? 'lg:order-1' : ''}`}>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-start gap-3 text-sm text-[#848484] border border-[#2A2A2A] p-4">
+                          <li key={itemIndex} className="flex items-start gap-3 text-sm text-muted border border-border p-4">
                             <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-1.5" />
                             <span>{item}</span>
                           </li>
@@ -107,10 +107,10 @@ export default function Services() {
             transition={{ duration: 0.6, ease: easeOutExpo }}
             className="flex flex-col items-center text-center gap-6 max-w-[800px] mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tight font-serif">
+            <h2 className="text-4xl md:text-5xl font-medium text-heading tracking-tight font-serif">
               {t('cta.text')}
             </h2>
-            <p className="text-lg text-[#848484] leading-relaxed">
+            <p className="text-lg text-muted leading-relaxed">
               {t('cta.description')}
             </p>
             <Link href="/contact" className="mt-4">

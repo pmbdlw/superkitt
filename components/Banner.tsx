@@ -36,10 +36,10 @@ export default function Banner({
             backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80)',
           }}
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-primary/70" />
+        {/* Dark overlay — always dark for hero */}
+        <div className="absolute inset-0 bg-[#0A0A0A]/70" />
 
-        {/* Content */}
+        {/* Content — always light text on dark hero */}
         <div className="relative z-10 w-full">
           <div className="container-custom">
             <div className="flex flex-col items-center text-center max-w-4xl mx-auto gap-10">
@@ -61,7 +61,7 @@ export default function Banner({
                 </motion.div>
               )}
 
-              {/* Headline */}
+              {/* Headline — always white on hero */}
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ export default function Banner({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4, ease: easeOutExpo }}
-                  className="text-xl text-[#848484] leading-relaxed max-w-2xl"
+                  className="text-xl text-[#9E9E9E] leading-relaxed max-w-2xl"
                 >
                   {description}
                 </motion.p>
@@ -100,7 +100,7 @@ export default function Banner({
     )
   }
 
-  // Page header variant
+  // Page header variant — theme-aware
   return (
     <div className={`relative ${heightClasses[height]} overflow-hidden bg-primary`}>
       <div className="relative z-10 h-full flex items-center">
@@ -111,11 +111,11 @@ export default function Banner({
                 {subtitle}
               </p>
             )}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight font-serif text-balance">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-heading tracking-tight font-serif text-balance">
               {title}
             </h1>
             {description && (
-              <p className="text-xl text-[#848484] mt-6 max-w-xl leading-relaxed">
+              <p className="text-xl text-muted mt-6 max-w-xl leading-relaxed">
                 {description}
               </p>
             )}
