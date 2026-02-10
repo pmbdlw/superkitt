@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Mail, CheckCircle } from 'lucide-react'
 import Layout from '@/components/Layout'
 import Button from '@/components/Button'
@@ -55,22 +55,21 @@ export default function Contact() {
   }
 
   const inputClasses =
-    'w-full px-4 py-3.5 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-secondary/30 focus:border-secondary transition-colors duration-200 outline-none'
+    'w-full px-5 py-4 border border-[#2A2A2A] bg-transparent text-white text-sm focus:border-gold/50 focus:outline-none transition-colors duration-300 placeholder:text-[#6A6A6A]'
 
   return (
     <Layout title={`${t('contact.title')} - ${t('company_name')}`} description={t('tagline')}>
-      {/* Page Header */}
       <Banner
         title={t('contact.title')}
-        subtitle="SuperKITT"
+        subtitle="SUPERKITT"
         description={t('contact.subtitle')}
         height="small"
       />
 
       {/* Contact Form and Info */}
-      <section className="py-24">
+      <section className="bg-primary py-24 lg:py-[100px]">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24">
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <AnimatePresence>
@@ -79,20 +78,20 @@ export default function Contact() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="mb-8 p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center gap-3"
+                    className="mb-8 p-5 border border-emerald-500/20 flex items-center gap-3"
                   >
-                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                    <span className="text-sm text-emerald-700">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                    <span className="text-sm text-emerald-300">
                       {t('contact.form.success')}
                     </span>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-3">
                       {t('contact.form.name')}
                     </label>
                     <input
@@ -102,12 +101,12 @@ export default function Contact() {
                       className={inputClasses}
                     />
                     {errors.name && (
-                      <span className="text-red-500 text-xs mt-1 block">{t('contact.form.required')}</span>
+                      <span className="text-red-400 text-xs mt-1.5 block">{t('contact.form.required')}</span>
                     )}
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-3">
                       {t('contact.form.email')}
                     </label>
                     <input
@@ -117,13 +116,13 @@ export default function Contact() {
                       className={inputClasses}
                     />
                     {errors.email && (
-                      <span className="text-red-500 text-xs mt-1 block">{t('contact.form.required')}</span>
+                      <span className="text-red-400 text-xs mt-1.5 block">{t('contact.form.required')}</span>
                     )}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="company" className="block text-sm font-medium text-white mb-3">
                     {t('contact.form.company')}
                   </label>
                   <input
@@ -133,12 +132,12 @@ export default function Contact() {
                     className={inputClasses}
                   />
                   {errors.company && (
-                    <span className="text-red-500 text-xs mt-1 block">{t('contact.form.required')}</span>
+                    <span className="text-red-400 text-xs mt-1.5 block">{t('contact.form.required')}</span>
                   )}
                 </div>
 
                 <div>
-                  <label htmlFor="requirements" className="block text-sm font-medium text-slate-700 mb-2">
+                  <label htmlFor="requirements" className="block text-sm font-medium text-white mb-3">
                     {t('contact.form.requirements')}
                   </label>
                   <textarea
@@ -148,7 +147,7 @@ export default function Contact() {
                     className={inputClasses}
                   />
                   {errors.requirements && (
-                    <span className="text-red-500 text-xs mt-1 block">{t('contact.form.required')}</span>
+                    <span className="text-red-400 text-xs mt-1.5 block">{t('contact.form.required')}</span>
                   )}
                 </div>
 
@@ -165,23 +164,23 @@ export default function Contact() {
 
             {/* Contact Info */}
             <div>
-              <div className="border border-slate-200 rounded-xl p-6 space-y-6">
+              <div className="dark-card space-y-6">
                 <div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-lg bg-secondary/10 flex items-center justify-center">
-                      <Mail className="w-4 h-4 text-secondary" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-[60px] h-[60px] border border-gold-muted flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-gold" />
                     </div>
-                    <h3 className="text-sm font-semibold text-primary">
+                    <h3 className="text-sm font-medium text-white">
                       {t('contact.info.email_label')}
                     </h3>
                   </div>
                   <a
                     href="mailto:service@superkitt.com"
-                    className="text-sm text-slate-600 hover:text-secondary transition-colors"
+                    className="text-sm text-[#848484] hover:text-gold transition-colors"
                   >
                     {t('contact.info.email')}
                   </a>
-                  <p className="text-xs text-slate-400 mt-1">
+                  <p className="text-xs text-[#6A6A6A] mt-2">
                     {t('contact.info.email_desc')}
                   </p>
                 </div>

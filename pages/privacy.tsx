@@ -19,29 +19,28 @@ export default function Privacy() {
 
   return (
     <Layout title={`${t('privacy.title')} - ${t('company_name')}`} description={t('privacy.content')}>
-      {/* Page Header */}
       <Banner
         title={t('privacy.title')}
-        subtitle="SuperKITT"
+        subtitle="SUPERKITT"
         height="small"
       />
 
       {/* Privacy Content */}
-      <section className="py-24">
+      <section className="bg-primary py-24 lg:py-[100px]">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Table of Contents — sticky sidebar */}
             <aside className="hidden lg:block">
               <div className="sticky top-28">
-                <p className="text-xs font-medium tracking-widest text-slate-400 uppercase mb-4">
+                <p className="text-xs font-medium tracking-label text-[#848484] uppercase mb-4">
                   {t('privacy.toc')}
                 </p>
-                <nav className="space-y-2">
+                <nav className="space-y-3">
                   {sections.map((section) => (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="block text-sm text-slate-500 hover:text-secondary transition-colors py-1"
+                      className="block text-sm text-[#848484] hover:text-gold transition-colors py-1"
                     >
                       {section.label}
                     </a>
@@ -53,52 +52,49 @@ export default function Privacy() {
             {/* Article content */}
             <div className="lg:col-span-3 max-w-none">
               <article className="space-y-12">
-                {/* Overview */}
                 <div id="overview">
-                  <h2 className="text-2xl font-bold text-primary tracking-tight mb-4">
+                  <h2 className="text-2xl font-medium text-white tracking-tight font-serif mb-4">
                     {t('privacy.title')}
                   </h2>
-                  <p className="text-base text-slate-600 leading-relaxed">
+                  <p className="text-base text-[#848484] leading-relaxed">
                     {t('privacy.content')}
                   </p>
                 </div>
 
-                <hr className="border-slate-100" />
+                <hr className="border-[#2A2A2A]" />
 
-                {/* Data Protection */}
                 <div id="data-protection">
-                  <h2 className="text-xl font-bold text-primary tracking-tight mb-4">
+                  <h2 className="text-xl font-medium text-white tracking-tight font-serif mb-4">
                     {t('privacy.data_protection_title')}
                   </h2>
                   <ul className="space-y-3">
                     {dataProtectionItems.map((item, index) => (
-                      <li key={index} className="flex items-start gap-3 text-base text-slate-600">
-                        <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0 mt-2" />
+                      <li key={index} className="flex items-start gap-3 text-base text-[#848484]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-2" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <hr className="border-slate-100" />
+                <hr className="border-[#2A2A2A]" />
 
-                {/* Compliance Services */}
                 <div id="compliance">
-                  <h2 className="text-xl font-bold text-primary tracking-tight mb-4">
+                  <h2 className="text-xl font-medium text-white tracking-tight font-serif mb-4">
                     {t('privacy.compliance_title')}
                   </h2>
-                  <p className="text-base text-slate-600 leading-relaxed">
+                  <p className="text-base text-[#848484] leading-relaxed">
                     {t('privacy.compliance_content')}
                   </p>
                 </div>
               </article>
 
               {/* Bottom CTA */}
-              <div className="mt-16 pt-12 border-t border-slate-100">
-                <p className="text-lg font-semibold text-primary mb-2">
+              <div className="mt-16 pt-12 border-t border-[#2A2A2A]">
+                <p className="text-lg font-medium text-white mb-2 font-serif">
                   {t('cta.text')}
                 </p>
-                <p className="text-sm text-slate-500 mb-6">
+                <p className="text-sm text-[#848484] mb-6">
                   {t('cta.description')}
                 </p>
                 <Link href="/contact">

@@ -8,10 +8,14 @@ interface CardProps {
   animate?: boolean
 }
 
+const easeOutExpo = [0.22, 1, 0.36, 1]
+
 export default function Card({ children, className = '', delay = 0, animate = true }: CardProps) {
+  const baseStyles = 'dark-card'
+
   if (!animate) {
     return (
-      <div className={`bg-white border border-slate-200 rounded-xl p-6 transition-colors duration-200 hover:border-slate-300 ${className}`}>
+      <div className={`${baseStyles} ${className}`}>
         {children}
       </div>
     )
@@ -19,11 +23,15 @@ export default function Card({ children, className = '', delay = 0, animate = tr
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.98 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.4, delay, type: 'spring', damping: 25, stiffness: 120 }}
-      className={`bg-white border border-slate-200 rounded-xl p-6 transition-colors duration-200 hover:border-slate-300 ${className}`}
+      transition={{
+        duration: 0.5,
+        delay,
+        ease: easeOutExpo,
+      }}
+      className={`${baseStyles} ${className}`}
     >
       {children}
     </motion.div>

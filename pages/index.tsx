@@ -4,11 +4,13 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
-import { Cloud, Shield, Globe as GlobeIcon, TrendingUp, Brain, Database, ShoppingCart, Users } from 'lucide-react'
+import { Cloud, Shield, Globe as GlobeIcon, TrendingUp, Brain, Database, ShoppingCart, Users, ArrowRight } from 'lucide-react'
 import Layout from '@/components/Layout'
 import Button from '@/components/Button'
 import Banner from '@/components/Banner'
 import ServiceCard from '@/components/ServiceCard'
+
+const easeOutExpo = [0.22, 1, 0.36, 1]
 
 function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null)
@@ -17,7 +19,6 @@ function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: str
 
   useEffect(() => {
     if (!isInView) return
-    let start = 0
     const duration = 1500
     const startTime = performance.now()
 
@@ -44,12 +45,7 @@ export default function Home() {
   const services = [
     { Icon: Cloud, titleKey: 'services.categories.cloud.title', descKey: 'services.categories.cloud.description' },
     { Icon: Shield, titleKey: 'services.categories.compliance.title', descKey: 'services.categories.compliance.description' },
-    { Icon: GlobeIcon, titleKey: 'services.categories.website.title', descKey: 'services.categories.website.description' },
-    { Icon: TrendingUp, titleKey: 'services.categories.marketing.title', descKey: 'services.categories.marketing.description' },
     { Icon: Brain, titleKey: 'services.categories.ai.title', descKey: 'services.categories.ai.description' },
-    { Icon: Database, titleKey: 'services.categories.integration.title', descKey: 'services.categories.integration.description' },
-    { Icon: ShoppingCart, titleKey: 'services.categories.ecommerce.title', descKey: 'services.categories.ecommerce.description' },
-    { Icon: Users, titleKey: 'services.categories.consulting.title', descKey: 'services.categories.consulting.description' },
   ]
 
   const partners = ['AWS', 'Microsoft Azure', 'Cloudflare', 'OpenAI']
@@ -61,123 +57,116 @@ export default function Home() {
     { value: 92, suffix: '%', labelKey: 'stats.satisfaction' },
   ]
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.06 },
-    },
-  }
-
   return (
     <Layout title={t('company_name')} description={t('tagline')}>
       {/* Hero */}
       <Banner
         title={t('hero.headline')}
-        subtitle="SuperKITT"
+        subtitle={t('company_name')}
         description={t('hero.subheadline')}
         variant="hero"
       >
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-5">
           <Link href="/contact">
-            <Button size="lg">{t('hero.cta')}</Button>
+            <Button size="lg">
+              <span className="flex items-center gap-3">
+                {t('hero.cta')}
+                <ArrowRight size={18} />
+              </span>
+            </Button>
           </Link>
-          <Link href="/services">
+          <Link href="/cases">
             <Button size="lg" variant="outline">{t('hero.cta_secondary')}</Button>
           </Link>
         </div>
       </Banner>
 
       {/* Services Section */}
-      <section className="py-24">
+      <section className="bg-primary py-24 lg:py-[100px]">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.5 }}
-            className="mb-16"
+            transition={{ duration: 0.6, ease: easeOutExpo }}
+            className="flex flex-col items-center text-center gap-4 mb-16"
           >
-            <p className="text-xs font-medium tracking-widest text-secondary uppercase mb-3">
-              {t('services.label')}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight text-balance">
-              {t('services.title')}
-            </h2>
+            <p className="section-label">{t('services.label')}</p>
+            <h2 className="section-title">{t('services.title')}</h2>
+            <p className="section-subtitle">{t('tagline')}</p>
           </motion.div>
 
-          {/* Top row: 3 featured services */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5"
-          >
-            {services.slice(0, 3).map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
               <ServiceCard
                 key={index}
                 title={t(service.titleKey)}
                 description={t(service.descKey)}
                 Icon={service.Icon}
-                delay={index * 0.06}
-                direction={index % 2 === 0 ? 'left' : 'right'}
+                delay={index * 0.1}
               />
             ))}
-          </motion.div>
-
-          {/* Bottom row: remaining services in smaller cards */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5"
-          >
-            {services.slice(3).map((service, index) => (
-              <ServiceCard
-                key={index + 3}
-                title={t(service.titleKey)}
-                Icon={service.Icon}
-                delay={index * 0.06}
-                direction={index % 2 === 0 ? 'right' : 'left'}
-              />
-            ))}
-          </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="mt-12"
+            transition={{ delay: 0.4, ease: easeOutExpo }}
+            className="mt-16 text-center"
           >
             <Link href="/services">
-              <Button variant="secondary">{t('nav.services')} &rarr;</Button>
+              <Button variant="outline">
+                <span className="flex items-center gap-2">
+                  {t('nav.services')}
+                  <ArrowRight size={14} />
+                </span>
+              </Button>
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 border-y border-slate-100">
+      {/* Stats / Trust Section */}
+      <section className="bg-surface py-20">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6, ease: easeOutExpo }}
+            className="flex flex-col items-center text-center gap-4 mb-16"
+          >
+            <p className="section-label">{t('partners.title')}</p>
+            <h2 className="section-title">{t('partners.title')}</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-primary tracking-tight">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: easeOutExpo }}
+                className={`flex flex-col items-center gap-3 py-8 ${
+                  index > 0 && index < 3 ? 'border-x border-[#2A2A2A]' : ''
+                }`}
+              >
+                <p className="text-5xl md:text-6xl font-medium text-gold tracking-tight font-serif">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </p>
-                <p className="text-sm text-slate-500 mt-2">
+                <p className="text-sm text-[#848484]">
                   {t(stat.labelKey)}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Partners Section */}
-      <section className="py-20">
+      <section className="bg-primary py-20">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0 }}
@@ -185,22 +174,20 @@ export default function Home() {
             viewport={{ once: true, margin: '-100px' }}
             className="text-center mb-12"
           >
-            <p className="text-xs font-medium tracking-widest text-secondary uppercase mb-3">
-              {t('partners.title')}
-            </p>
+            <p className="text-xs text-[#6A6A6A] tracking-[1px]">{t('partners.title')}</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {partners.map((partner, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center justify-center py-6 px-4 rounded-lg border border-slate-100 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                transition={{ delay: index * 0.1, ease: easeOutExpo }}
+                className="flex items-center justify-center py-8 px-6 border border-[#2A2A2A] opacity-60 hover:opacity-100 transition-all duration-300"
               >
-                <span className="text-lg font-semibold text-slate-800 tracking-tight">
+                <span className="text-lg font-medium text-white tracking-tight">
                   {partner}
                 </span>
               </motion.div>
@@ -210,23 +197,38 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-slate-50">
+      <section className="bg-primary py-24 lg:py-[120px]">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            className="text-center max-w-2xl mx-auto"
+            transition={{ duration: 0.6, ease: easeOutExpo }}
+            className="flex flex-col items-center text-center gap-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight mb-4">
-              {t('cta.text')}
-            </h2>
-            <p className="text-slate-500 mb-8">
-              {t('cta.description')}
-            </p>
-            <Link href="/contact">
-              <Button size="lg">{t('cta.button')}</Button>
-            </Link>
+            <div className="max-w-[800px] flex flex-col items-center gap-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight font-serif">
+                {t('cta.text')}
+              </h2>
+              <p className="text-lg text-[#848484] leading-relaxed">
+                {t('cta.description')}
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Link href="/contact">
+                <Button size="lg">
+                  <span className="flex items-center gap-3">
+                    {t('cta.button')}
+                    <ArrowRight size={18} />
+                  </span>
+                </Button>
+              </Link>
+            </div>
+            <div className="flex items-center gap-8 opacity-70">
+              <span className="text-xs text-[#6A6A6A]">ISO 27001</span>
+              <span className="text-xs text-[#6A6A6A]">SOC 2</span>
+              <span className="text-xs text-[#6A6A6A]">GDPR</span>
+            </div>
           </motion.div>
         </div>
       </section>

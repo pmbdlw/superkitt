@@ -11,43 +11,51 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-primary text-white">
-      {/* Gradient top separator */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/40 to-transparent" />
-
-      <div className="container-custom pt-16 pb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+    <footer className="bg-surface text-heading">
+      {/* Main footer content */}
+      <div className="container-custom border-t border-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20 py-20">
           {/* Column 1: Logo & Description */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Logo isDark={false} showText={true} />
-            <p className="text-slate-400 text-sm mt-4 max-w-xs leading-relaxed">
+            <Logo showText={true} />
+            <p className="text-sm text-muted mt-6 leading-relaxed max-w-xs">
               {t('footer.description')}
             </p>
+            <div className="flex items-center gap-4 mt-6">
+              <a
+                href="https://linkedin.com/company/superkitt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-subtle hover:text-gold transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Column 2: Services */}
           <div>
-            <h4 className="text-sm font-semibold tracking-wide uppercase text-slate-300 mb-4">
+            <h4 className="text-sm font-medium text-heading mb-5">
               {t('footer.services_label')}
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-4">
               <li>
-                <Link href="/services" className="text-sm text-slate-400 hover:text-secondary transition-colors">
+                <Link href="/services" className="text-[13px] text-muted hover:text-heading transition-colors">
                   {t('services.categories.cloud.title')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-slate-400 hover:text-secondary transition-colors">
+                <Link href="/services" className="text-[13px] text-muted hover:text-heading transition-colors">
                   {t('services.categories.compliance.title')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-slate-400 hover:text-secondary transition-colors">
+                <Link href="/services" className="text-[13px] text-muted hover:text-heading transition-colors">
                   {t('services.categories.ai.title')}
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-slate-400 hover:text-secondary transition-colors">
+                <Link href="/services" className="text-[13px] text-muted hover:text-heading transition-colors">
                   {t('services.categories.ecommerce.title')}
                 </Link>
               </li>
@@ -56,22 +64,22 @@ export default function Footer() {
 
           {/* Column 3: Company */}
           <div>
-            <h4 className="text-sm font-semibold tracking-wide uppercase text-slate-300 mb-4">
+            <h4 className="text-sm font-medium text-heading mb-5">
               {t('footer.company_label')}
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-4">
               <li>
-                <Link href="/about" className="text-sm text-slate-400 hover:text-secondary transition-colors">
+                <Link href="/about" className="text-[13px] text-muted hover:text-heading transition-colors">
                   {t('nav.about')}
                 </Link>
               </li>
               <li>
-                <Link href="/cases" className="text-sm text-slate-400 hover:text-secondary transition-colors">
+                <Link href="/cases" className="text-[13px] text-muted hover:text-heading transition-colors">
                   {t('nav.cases')}
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-sm text-slate-400 hover:text-secondary transition-colors">
+                <Link href="/privacy" className="text-[13px] text-muted hover:text-heading transition-colors">
                   {t('privacy.title')}
                 </Link>
               </li>
@@ -80,39 +88,32 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h4 className="text-sm font-semibold tracking-wide uppercase text-slate-300 mb-4">
+            <h4 className="text-sm font-medium text-heading mb-5">
               {t('footer.contact_label')}
             </h4>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <a
                 href="mailto:service@superkitt.com"
-                className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-secondary transition-colors"
+                className="flex items-center gap-3 text-[13px] text-muted hover:text-heading transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 <span>service@superkitt.com</span>
               </a>
-              <a
-                href="https://linkedin.com/company/superkitt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-secondary transition-colors"
-              >
-                <Linkedin className="w-4 h-4" />
-                <span>LinkedIn</span>
-              </a>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom bar */}
-        <div className="flex items-center justify-between mt-12 pt-8 border-t border-white/10">
-          <p className="text-sm text-slate-500">{t('footer.copyright')}</p>
+      {/* Bottom bar */}
+      <div className="container-custom border-t border-border">
+        <div className="flex items-center justify-between py-6">
+          <p className="text-xs text-subtle">{t('footer.copyright')}</p>
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-secondary transition-colors"
+            className="text-subtle hover:text-gold transition-colors"
+            aria-label="Back to top"
           >
-            <ArrowUp className="w-3.5 h-3.5" />
-            {t('footer.back_to_top')}
+            <ArrowUp className="w-4 h-4" />
           </button>
         </div>
       </div>

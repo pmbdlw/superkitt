@@ -3,8 +3,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { Menu, X, Globe, Check } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import Logo from './Logo'
+import ThemeSwitch from './ThemeSwitch'
 
 export default function Navigation() {
   const { t } = useTranslation('common')
@@ -15,9 +16,7 @@ export default function Navigation() {
   const languageMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -32,16 +31,9 @@ export default function Navigation() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [isMobileMenuOpen])
 
   const changeLanguage = (locale: string) => {
@@ -66,45 +58,46 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/80 backdrop-blur-xl shadow-sm py-4'
-            : 'bg-transparent py-6'
+            ? 'bg-primary/95 backdrop-blur-md border-b border-border'
+            : 'bg-primary'
         }`}
       >
-        <div className="container-custom flex items-center justify-between">
+        <div className="container-custom flex items-center justify-between h-20">
           <Link href="/" className="flex items-center">
-            <Logo isDark={isScrolled} showText={true} />
+            <Logo showText={true} />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12">
             {navItems.map((item) => {
               const isActive = router.pathname === item.href
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative text-sm font-medium tracking-wide transition-opacity duration-200 ${
-                    isScrolled ? 'text-slate-700' : 'text-white'
-                  } ${isActive ? '' : 'opacity-70 hover:opacity-100'}`}
+                  className={`text-sm transition-colors duration-200 ${
+                    isActive ? 'text-heading' : 'text-muted hover:text-heading'
+                  }`}
                 >
                   {item.label}
-                  {isActive && (
-                    <span className="absolute -bottom-1.5 left-0 right-0 h-0.5 bg-secondary rounded-full" />
-                  )}
                 </Link>
               )
             })}
+          </div>
+
+          {/* CTA area */}
+          <div className="hidden md:flex items-center gap-5">
+            {/* Theme Switch */}
+            <ThemeSwitch />
 
             {/* Language Dropdown */}
             <div className="relative" ref={languageMenuRef}>
               <button
                 onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
-                className={`p-2 rounded-lg transition-colors duration-200 ${
-                  isScrolled ? 'hover:bg-slate-100' : 'hover:bg-white/10'
-                }`}
+                className="p-2 transition-colors duration-200 text-muted hover:text-heading"
                 aria-label="Select language"
               >
-                <Globe className={`w-4 h-4 ${isScrolled ? 'text-slate-600' : 'text-white/80'}`} />
+                <Globe className="w-4 h-4" />
               </button>
 
               <AnimatePresence>
@@ -114,7 +107,7 @@ export default function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -4 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg overflow-hidden border border-slate-100"
+                    className="absolute right-0 mt-2 w-44 bg-primary border border-border overflow-hidden z-50"
                   >
                     {languages.map((lang) => {
                       const isActive = router.locale === lang.code
@@ -124,17 +117,17 @@ export default function Navigation() {
                           onClick={() => changeLanguage(lang.code)}
                           className={`w-full flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
                             isActive
-                              ? 'bg-secondary/5 text-secondary'
-                              : 'text-slate-700 hover:bg-slate-50'
+                              ? 'bg-gold/10 text-gold'
+                              : 'text-muted hover:bg-heading/5'
                           }`}
                         >
                           <div className="flex items-center gap-2.5">
                             <span className="text-base">{lang.flag}</span>
-                            <span className={`font-medium ${isActive ? 'text-secondary' : ''}`}>
+                            <span className={`font-medium ${isActive ? 'text-gold' : ''}`}>
                               {lang.name}
                             </span>
                           </div>
-                          {isActive && <Check className="w-4 h-4 text-secondary" />}
+                          {isActive && <Check className="w-4 h-4 text-gold" />}
                         </button>
                       )
                     })}
@@ -143,12 +136,17 @@ export default function Navigation() {
               </AnimatePresence>
             </div>
 
-            {/* CTA Button */}
             <Link
               href="/contact"
-              className="bg-secondary hover:bg-secondary/90 text-white text-sm font-medium px-5 py-2 rounded-lg transition-colors duration-200"
+              className="border border-border text-muted text-[13px] px-6 py-3 hover:border-heading/20 hover:text-heading transition-all duration-300"
             >
               {t('nav.contact')}
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-gold text-[#1A1A1A] text-[13px] font-medium px-6 py-3 hover:bg-gold-light transition-all duration-300 btn-shine"
+            >
+              {t('hero.cta')}
             </Link>
           </div>
 
@@ -158,40 +156,39 @@ export default function Navigation() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? 'text-slate-700' : 'text-white'}`} />
+              <X className="w-6 h-6 text-heading" />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? 'text-slate-700' : 'text-white'}`} />
+              <Menu className="w-6 h-6 text-heading" />
             )}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu — Slide from right panel */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/40 z-40 md:hidden"
+              className="fixed inset-0 bg-black/60 z-40 md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
-            {/* Panel */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 w-72 bg-white z-50 md:hidden shadow-2xl"
+              className="fixed top-0 right-0 bottom-0 w-72 bg-surface border-l border-border z-50 md:hidden"
             >
               <div className="flex flex-col h-full">
-                <div className="flex justify-end p-4">
+                <div className="flex items-center justify-between p-4">
+                  <ThemeSwitch />
                   <button onClick={() => setIsMobileMenuOpen(false)} className="p-2">
-                    <X className="w-6 h-6 text-slate-700" />
+                    <X className="w-6 h-6 text-heading" />
                   </button>
                 </div>
 
@@ -204,7 +201,7 @@ export default function Navigation() {
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`block py-3 text-base font-medium transition-colors ${
-                          isActive ? 'text-secondary' : 'text-slate-700 hover:text-secondary'
+                          isActive ? 'text-gold' : 'text-muted hover:text-heading'
                         }`}
                       >
                         {item.label}
@@ -215,14 +212,13 @@ export default function Navigation() {
                   <Link
                     href="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-3 text-base font-medium text-secondary"
+                    className="block py-3 text-base font-medium text-gold"
                   >
                     {t('nav.contact')}
                   </Link>
                 </div>
 
-                {/* Mobile Language Selector */}
-                <div className="px-6 py-6 border-t border-slate-100">
+                <div className="px-6 py-6 border-t border-border">
                   <div className="flex gap-2">
                     {languages.map((lang) => {
                       const isActive = router.locale === lang.code
@@ -233,10 +229,10 @@ export default function Navigation() {
                             changeLanguage(lang.code)
                             setIsMobileMenuOpen(false)
                           }}
-                          className={`flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                          className={`flex-1 flex items-center justify-center gap-2 px-3 py-2.5 text-sm font-medium transition-colors ${
                             isActive
-                              ? 'bg-secondary/10 text-secondary'
-                              : 'text-slate-500 hover:bg-slate-50'
+                              ? 'bg-gold/10 text-gold border border-gold/20'
+                              : 'text-muted hover:bg-heading/5'
                           }`}
                         >
                           <span>{lang.flag}</span>

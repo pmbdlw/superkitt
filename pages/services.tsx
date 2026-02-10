@@ -3,10 +3,12 @@ import Link from 'next/link'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
-import { Cloud, Shield, Globe, TrendingUp, Brain, Database, ShoppingCart, Users, LucideIcon } from 'lucide-react'
+import { Cloud, Shield, Globe, TrendingUp, Brain, Database, ShoppingCart, Users, LucideIcon, ArrowRight } from 'lucide-react'
 import Layout from '@/components/Layout'
 import Banner from '@/components/Banner'
 import Button from '@/components/Button'
+
+const easeOutExpo = [0.22, 1, 0.36, 1]
 
 interface ServiceCategory {
   Icon: LucideIcon
@@ -31,18 +33,17 @@ export default function Services() {
 
   return (
     <Layout title={`${t('services.title')} - ${t('company_name')}`} description={t('tagline')}>
-      {/* Page Header */}
       <Banner
         title={t('services.title')}
-        subtitle="SuperKITT"
+        subtitle="SUPERKITT"
         description={t('tagline')}
         height="small"
       />
 
       {/* Services List */}
-      <section className="py-24">
+      <section className="bg-primary py-24 lg:py-[100px]">
         <div className="container-custom">
-          <div className="space-y-16">
+          <div className="space-y-24">
             {serviceCategories.map((category, index) => {
               const items = t(category.itemsKey, { returnObjects: true }) as string[]
               const isReversed = index % 2 === 1
@@ -51,42 +52,43 @@ export default function Services() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 12 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.5 }}
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start ${
-                    isReversed ? 'lg:direction-rtl' : ''
-                  }`}
+                  transition={{ duration: 0.6, ease: easeOutExpo }}
                 >
-                  {/* Icon & Title Side */}
-                  <div className={`lg:col-span-4 ${isReversed ? 'lg:order-2' : ''}`}>
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
-                        <Icon size={20} className="text-secondary" strokeWidth={1.5} />
-                      </div>
-                      <span className="text-xs font-medium tracking-widest text-slate-400 uppercase">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-primary tracking-tight">
-                      {t(category.titleKey)}
-                    </h3>
-                    <p className="text-sm text-slate-500 mt-2 leading-relaxed">
-                      {t(category.descKey)}
-                    </p>
-                  </div>
+                  {index > 0 && (
+                    <div className="mb-16 h-px bg-[#2A2A2A]" />
+                  )}
 
-                  {/* Items Side */}
-                  <div className={`lg:col-span-8 ${isReversed ? 'lg:order-1' : ''}`}>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-start gap-3 text-sm text-slate-600">
-                          <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0 mt-1.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start`}>
+                    <div className={`lg:col-span-4 ${isReversed ? 'lg:order-2' : ''}`}>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-[60px] h-[60px] border border-gold-muted flex items-center justify-center">
+                          <Icon size={28} className="text-gold" strokeWidth={1.5} />
+                        </div>
+                        <span className="text-xs font-medium tracking-label text-[#848484] uppercase">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+                      <h3 className="text-2xl font-medium text-white tracking-tight font-serif">
+                        {t(category.titleKey)}
+                      </h3>
+                      <p className="text-sm text-[#848484] mt-3 leading-relaxed">
+                        {t(category.descKey)}
+                      </p>
+                    </div>
+
+                    <div className={`lg:col-span-8 ${isReversed ? 'lg:order-1' : ''}`}>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {items.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-start gap-3 text-sm text-[#848484] border border-[#2A2A2A] p-4">
+                            <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0 mt-1.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </motion.div>
               )
@@ -96,22 +98,28 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-slate-50">
+      <section className="bg-primary py-24 lg:py-[120px]">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-2xl mx-auto"
+            transition={{ duration: 0.6, ease: easeOutExpo }}
+            className="flex flex-col items-center text-center gap-6 max-w-[800px] mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight mb-4">
+            <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tight font-serif">
               {t('cta.text')}
             </h2>
-            <p className="text-slate-500 mb-8">
+            <p className="text-lg text-[#848484] leading-relaxed">
               {t('cta.description')}
             </p>
-            <Link href="/contact">
-              <Button size="lg">{t('cta.button')}</Button>
+            <Link href="/contact" className="mt-4">
+              <Button size="lg">
+                <span className="flex items-center gap-3">
+                  {t('cta.button')}
+                  <ArrowRight size={18} />
+                </span>
+              </Button>
             </Link>
           </motion.div>
         </div>
