@@ -4,10 +4,12 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Mail, CheckCircle } from 'lucide-react'
+import { Mail, CheckCircle, Timer, Globe, Send } from 'lucide-react'
 import Layout from '@/components/Layout'
 import Button from '@/components/Button'
 import Banner from '@/components/Banner'
+
+const easeOutExpo = [0.22, 1, 0.36, 1]
 
 interface ContactFormData {
   name: string
@@ -30,18 +32,13 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true)
-
     try {
       const webhookUrl = process.env.NEXT_PUBLIC_WEBHOOK_URL || '/api/contact'
-
       const response = await fetch(webhookUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
-
       if (response.ok) {
         setSubmitSuccess(true)
         reset()
@@ -55,137 +52,138 @@ export default function Contact() {
   }
 
   const inputClasses =
-    'w-full px-5 py-4 border border-border bg-transparent text-heading text-sm focus:border-gold/50 focus:outline-none transition-colors duration-300 placeholder:text-subtle'
+    'w-full px-4 py-3.5 border border-border bg-card-bg text-heading text-sm focus:border-gold/50 focus:outline-none transition-colors duration-300 placeholder:text-subtle rounded-md'
+
+  const contactInfoItems = [
+    {
+      icon: Mail,
+      color: '#C4614A',
+      bg: 'rgba(196,97,74,0.12)',
+      label: t('contact.info.email_label'),
+      value: 'service@superkitt.com',
+    },
+    {
+      icon: Timer,
+      color: '#3FBFAF',
+      bg: 'rgba(63,191,175,0.12)',
+      label: t('contact.info.response_label'),
+      value: t('contact.info.response_value'),
+    },
+    {
+      icon: Globe,
+      color: '#F5C842',
+      bg: 'rgba(245,200,66,0.12)',
+      label: t('contact.info.location_label'),
+      value: t('contact.info.location_value'),
+    },
+  ]
 
   return (
     <Layout title={`${t('contact.title')} - ${t('company_name')}`} description={t('tagline')}>
       <Banner
-        title={t('contact.title')}
-        subtitle="SUPERKITT"
+        title={t('contact.banner_title')}
+        badge={t('contact.banner_badge')}
         description={t('contact.subtitle')}
         height="small"
+        centered
       />
 
-      {/* Contact Form and Info */}
+      {/* Form + Info */}
       <section className="bg-primary py-24 lg:py-[100px]">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-20 items-start">
             {/* Contact Form */}
-            <div className="lg:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: easeOutExpo }}
+              className="bg-surface border border-border rounded-xl p-10 lg:p-12 flex flex-col gap-8"
+            >
+              <div>
+                <h2 className="text-2xl font-semibold text-heading font-serif mb-2">{t('contact.form_title')}</h2>
+                <p className="text-sm text-muted">{t('contact.form_subtitle')}</p>
+              </div>
+
               <AnimatePresence>
                 {submitSuccess && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="mb-8 p-5 border border-emerald-500/20 flex items-center gap-3"
+                    exit={{ opacity: 0, y: -8 }}
+                    className="p-4 border border-emerald-500/20 rounded-md bg-emerald-500/5 flex items-center gap-3"
                   >
                     <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                    <span className="text-sm text-emerald-300">
-                      {t('contact.form.success')}
-                    </span>
+                    <span className="text-sm text-emerald-300">{t('contact.form.success')}</span>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-heading mb-3">
-                      {t('contact.form.name')}
-                    </label>
-                    <input
-                      id="name"
-                      type="text"
-                      {...register('name', { required: true })}
-                      className={inputClasses}
-                    />
-                    {errors.name && (
-                      <span className="text-red-400 text-xs mt-1.5 block">{t('contact.form.required')}</span>
-                    )}
+              <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="name" className="text-sm font-medium text-heading">{t('contact.form.name')} *</label>
+                    <input id="name" type="text" {...register('name', { required: true })} className={inputClasses} placeholder={t('contact.form.name_placeholder')} />
+                    {errors.name && <span className="text-red-400 text-xs">{t('contact.form.required')}</span>}
                   </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-heading mb-3">
-                      {t('contact.form.email')}
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      {...register('email', { required: true })}
-                      className={inputClasses}
-                    />
-                    {errors.email && (
-                      <span className="text-red-400 text-xs mt-1.5 block">{t('contact.form.required')}</span>
-                    )}
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="email" className="text-sm font-medium text-heading">{t('contact.form.email')} *</label>
+                    <input id="email" type="email" {...register('email', { required: true })} className={inputClasses} placeholder="your@company.com" />
+                    {errors.email && <span className="text-red-400 text-xs">{t('contact.form.required')}</span>}
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-heading mb-3">
-                    {t('contact.form.company')}
-                  </label>
-                  <input
-                    id="company"
-                    type="text"
-                    {...register('company', { required: true })}
-                    className={inputClasses}
-                  />
-                  {errors.company && (
-                    <span className="text-red-400 text-xs mt-1.5 block">{t('contact.form.required')}</span>
-                  )}
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="company" className="text-sm font-medium text-heading">{t('contact.form.company')}</label>
+                  <input id="company" type="text" {...register('company')} className={inputClasses} placeholder={t('contact.form.company_placeholder')} />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="requirements" className="text-sm font-medium text-heading">{t('contact.form.requirements')}</label>
+                  <textarea id="requirements" rows={6} {...register('requirements', { required: true })} className={inputClasses} placeholder={t('contact.form.requirements_placeholder')} />
+                  {errors.requirements && <span className="text-red-400 text-xs">{t('contact.form.required')}</span>}
                 </div>
 
                 <div>
-                  <label htmlFor="requirements" className="block text-sm font-medium text-heading mb-3">
-                    {t('contact.form.requirements')}
-                  </label>
-                  <textarea
-                    id="requirements"
-                    rows={6}
-                    {...register('requirements', { required: true })}
-                    className={inputClasses}
-                  />
-                  {errors.requirements && (
-                    <span className="text-red-400 text-xs mt-1.5 block">{t('contact.form.required')}</span>
-                  )}
+                  <Button type="submit" disabled={isSubmitting} size="lg">
+                    <span className="flex items-center gap-2">
+                      <Send size={15} />
+                      {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
+                    </span>
+                  </Button>
                 </div>
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full sm:w-auto"
-                  size="lg"
-                >
-                  {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
-                </Button>
               </form>
-            </div>
+            </motion.div>
 
             {/* Contact Info */}
-            <div>
-              <div className="dark-card space-y-6">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-[60px] h-[60px] border border-gold-muted flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-gold" />
-                    </div>
-                    <h3 className="text-sm font-medium text-heading">
-                      {t('contact.info.email_label')}
-                    </h3>
-                  </div>
-                  <a
-                    href="mailto:service@superkitt.com"
-                    className="text-sm text-muted hover:text-gold transition-colors"
-                  >
-                    {t('contact.info.email')}
-                  </a>
-                  <p className="text-xs text-subtle mt-2">
-                    {t('contact.info.email_desc')}
-                  </p>
-                </div>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: easeOutExpo }}
+              className="flex flex-col gap-5"
+            >
+              <div className="mb-2">
+                <h2 className="text-2xl font-semibold text-heading font-serif mb-3">{t('contact.info.title')}</h2>
+                <p className="text-sm text-muted leading-relaxed">{t('contact.info.desc')}</p>
               </div>
-            </div>
+
+              {contactInfoItems.map((item, i) => {
+                const Icon = item.icon
+                return (
+                  <div key={i} className="flex items-center gap-4 bg-surface border border-border rounded-lg px-5 py-5">
+                    <div
+                      className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: item.bg }}
+                    >
+                      <Icon size={18} style={{ color: item.color }} strokeWidth={1.5} />
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-xs text-muted">{item.label}</span>
+                      <span className="text-sm font-medium text-heading">{item.value}</span>
+                    </div>
+                  </div>
+                )
+              })}
+            </motion.div>
           </div>
         </div>
       </section>

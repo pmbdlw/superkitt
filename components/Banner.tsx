@@ -1,13 +1,16 @@
 import { ReactNode } from 'react'
 import { motion } from 'framer-motion'
+import TechBackground from './TechBackground'
 
 interface BannerProps {
   title: string
   subtitle?: string
+  badge?: string
   description?: string
   children?: ReactNode
   height?: 'small' | 'medium' | 'large'
   variant?: 'hero' | 'page'
+  centered?: boolean
 }
 
 const easeOutExpo = [0.22, 1, 0.36, 1] as const
@@ -15,10 +18,12 @@ const easeOutExpo = [0.22, 1, 0.36, 1] as const
 export default function Banner({
   title,
   subtitle,
+  badge,
   description,
   children,
   height = 'medium',
   variant = 'page',
+  centered = false,
 }: BannerProps) {
   const heightClasses = {
     small: 'py-36 pt-44',
@@ -28,16 +33,9 @@ export default function Banner({
 
   if (variant === 'hero') {
     return (
-      <div className="relative min-h-[720px] flex items-center overflow-hidden">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80)',
-          }}
-        />
-        {/* Dark overlay — always dark for hero */}
-        <div className="absolute inset-0 bg-[#0A0A0A]/70" />
+      <div className="relative min-h-[720px] flex items-center overflow-hidden bg-[#0A0A0A]">
+        {/* Tech animated background */}
+        <TechBackground variant="hero" />
 
         {/* Content — always light text on dark hero */}
         <div className="relative z-10 w-full">
@@ -53,7 +51,7 @@ export default function Banner({
                 >
                   <div
                     className="w-2 h-2 rounded-full bg-gold"
-                    style={{ boxShadow: '0 0 6px rgba(201,169,98,0.4)' }}
+                    style={{ boxShadow: '0 0 6px rgba(245,200,66,0.5)' }}
                   />
                   <span className="text-gold text-[11px] font-medium tracking-[1px] uppercase">
                     {subtitle}
@@ -77,7 +75,7 @@ export default function Banner({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4, ease: easeOutExpo }}
-                  className="text-xl text-[#9E9E9E] leading-relaxed max-w-2xl"
+                  className="text-xl text-[#C4A898] leading-relaxed max-w-2xl"
                 >
                   {description}
                 </motion.p>
@@ -100,26 +98,52 @@ export default function Banner({
     )
   }
 
-  // Page header variant — theme-aware
+  // Page header variant — always-dark style matching design
   return (
-    <div className={`relative ${heightClasses[height]} overflow-hidden bg-primary`}>
-      <div className="relative z-10 h-full flex items-center">
+    <div className={`relative ${heightClasses[height]} overflow-hidden bg-espresso dark:bg-surface always-dark border-b border-border`}>
+      <TechBackground variant="banner" />
+      <div className="relative z-10 h-full flex items-center justify-center">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            {subtitle && (
-              <p className="section-label mb-4">
-                {subtitle}
-              </p>
+          <div className={`flex flex-col gap-6 ${centered ? 'items-center text-center' : 'max-w-3xl'}`}>
+            {(badge || subtitle) && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className={`flex ${centered ? 'justify-center' : ''}`}
+              >
+                <span className="inline-block px-4 py-1.5 bg-gold/10 text-gold text-[11px] font-semibold tracking-[2px] uppercase rounded-sm">
+                  {badge || subtitle}
+                </span>
+              </motion.div>
             )}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-heading tracking-tight font-serif text-balance">
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: easeOutExpo }}
+              className={`text-4xl md:text-5xl lg:text-[52px] font-semibold text-heading tracking-tight leading-[1.15] font-serif ${centered ? 'text-center max-w-3xl' : 'text-balance'}`}
+            >
               {title}
-            </h1>
+            </motion.h1>
             {description && (
-              <p className="text-xl text-muted mt-6 max-w-xl leading-relaxed">
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35, ease: easeOutExpo }}
+                className={`text-lg text-muted leading-relaxed ${centered ? 'max-w-2xl' : 'max-w-xl'}`}
+              >
                 {description}
-              </p>
+              </motion.p>
             )}
-            {children && <div className="mt-10">{children}</div>}
+            {children && (
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5, ease: easeOutExpo }}
+              >
+                {children}
+              </motion.div>
+            )}
           </div>
         </div>
       </div>

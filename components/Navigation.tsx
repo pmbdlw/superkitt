@@ -50,6 +50,7 @@ export default function Navigation() {
     { label: t('nav.home'), href: '/' },
     { label: t('nav.services'), href: '/services' },
     { label: t('nav.cases'), href: '/cases' },
+    { label: t('nav.blog'), href: '/blog' },
     { label: t('nav.about'), href: '/about' },
   ]
 
@@ -144,7 +145,7 @@ export default function Navigation() {
             </Link>
             <Link
               href="/contact"
-              className="bg-gold text-[#1A1A1A] text-[13px] font-medium px-6 py-3 hover:bg-gold-light transition-all duration-300 btn-shine"
+              className="bg-gold text-white text-[13px] font-medium px-6 py-3 hover:bg-gold-light transition-all duration-300 btn-shine"
             >
               {t('hero.cta')}
             </Link>

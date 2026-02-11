@@ -8,7 +8,7 @@ interface ServiceIconProps {
 
 export default function ServiceIcon({
   Icon,
-  color = '#00C4CC',
+  color = '#C4614A',
   size = 48,
 }: ServiceIconProps) {
   return (

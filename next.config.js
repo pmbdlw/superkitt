@@ -5,15 +5,13 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   images: {
-    // Add your custom image domains here when you add real images
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: 'your-cdn.com',
-    //     port: '',
-    //     pathname: '/**',
-    //   },
-    // ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
+    ],
   },
 }
 

@@ -21,8 +21,17 @@ const config: Config = {
           DEFAULT: 'rgb(var(--color-gold) / <alpha-value>)',
           light: 'rgb(var(--color-gold-light) / <alpha-value>)',
           dark: 'rgb(var(--color-gold-dark) / <alpha-value>)',
-          muted: 'rgb(var(--color-gold) / 0.25)',
+          muted: 'rgb(var(--color-gold) / 0.15)',
         },
+        aqua: {
+          DEFAULT: 'rgb(var(--color-aqua) / <alpha-value>)',
+          muted: 'rgb(var(--color-aqua) / 0.15)',
+        },
+        butter: {
+          DEFAULT: 'rgb(var(--color-butter) / <alpha-value>)',
+          muted: 'rgb(var(--color-butter) / 0.15)',
+        },
+        espresso: 'rgb(var(--color-espresso) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Noto Sans SC', 'sans-serif'],

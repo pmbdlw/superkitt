@@ -5,18 +5,26 @@
     "home": "Home",
     "services": "Services",
     "cases": "Cases",
+    "blog": "Blog",
     "about": "About",
     "contact": "Contact"
   },
   "hero": {
+    "badge": "GLOBAL IT PARTNER",
     "headline": "Complete IT Solutions for Chinese Enterprises Going Global",
     "subheadline": "From cloud architecture and data security to AI enablement, we empower your global expansion",
     "cta": "Get Started",
     "cta_secondary": "Learn More"
   },
   "services": {
-    "title": "Our Services",
-    "label": "What We Do",
+    "title": "Comprehensive Technology Services",
+    "label": "WHAT WE DO",
+    "banner_title": "Our Services",
+    "banner_desc": "End-to-end technology solutions built for Chinese enterprises expanding into global markets.",
+    "learn_more": "Learn more",
+    "cta_label": "GET STARTED",
+    "cta_title": "Ready to Build Your Global IT Stack?",
+    "cta_desc": "Tell us about your business and we'll recommend the right combination of services to support your expansion.",
     "categories": {
       "cloud": {
         "title": "Global Cloud & Architecture",
@@ -38,7 +46,7 @@
         ]
       },
       "website": {
-        "title": "Website & Application Internationalization",
+        "title": "Website & App Internationalization",
         "description": "Build multilingual, high-performance websites that resonate with global audiences.",
         "items": [
           "Multilingual website development (Next.js / WordPress)",
@@ -65,7 +73,7 @@
         ]
       },
       "integration": {
-        "title": "System Integration & Data Services",
+        "title": "System Integration & Data",
         "description": "Connect your ERP, CRM, and e-commerce systems with unified data pipelines and dashboards.",
         "items": [
           "ERP / CRM / E-commerce system integration",
@@ -73,7 +81,7 @@
         ]
       },
       "ecommerce": {
-        "title": "Cross-border E-commerce Technology",
+        "title": "Cross-border E-commerce Tech",
         "description": "Launch and optimize your independent stores with multi-currency support and analytics.",
         "items": [
           "Shopify / WooCommerce independent store setup",
@@ -93,32 +101,77 @@
     }
   },
   "stats": {
+    "trust_label": "TRUSTED WORLDWIDE",
+    "trust_title": "Powering Global Enterprise Leaders",
     "clients": "Clients Served",
     "categories": "Service Categories",
-    "coverage": "Global Coverage",
-    "satisfaction": "Satisfaction Rate"
+    "coverage": "Countries Covered",
+    "satisfaction": "Client Satisfaction"
+  },
+  "solutions": {
+    "label": "INDUSTRY SOLUTIONS",
+    "title": "Tailored for Your Industry",
+    "subtitle": "Deep domain expertise across key sectors",
+    "fintech": {
+      "title": "Financial Technology",
+      "description": "Secure global payments, compliance & fintech infrastructure"
+    },
+    "saas": {
+      "title": "SaaS & Tech Startups",
+      "description": "GDPR compliance, multilingual support & global scaling"
+    },
+    "ecommerce": {
+      "title": "Cross-border Commerce",
+      "description": "Omnichannel retail, supply chain & customer analytics"
+    }
+  },
+  "testimonials": {
+    "label": "CLIENT SUCCESS",
+    "title": "What Our Clients Say",
+    "quote1": {
+      "text": "SuperKitt transformed our IT infrastructure,\ndelivering 40% efficiency gains.\nTheir cloud expertise was truly exceptional.",
+      "author": "Sarah Chen",
+      "role": "CTO, Global Finance Corp"
+    },
+    "quote2": {
+      "text": "SuperKitt's AI solutions now process our\ndata 10x faster with unprecedented accuracy.\nTruly transformative.",
+      "author": "Michael Rodriguez",
+      "role": "VP Technology, RetailMax"
+    }
   },
   "partners": {
     "title": "Our Partners"
   },
   "cta": {
-    "text": "Ready to go global?",
+    "text": "Ready to Transform Your Business?",
     "description": "Contact our technical experts and start your international expansion journey.",
     "button": "Contact SuperKitt"
   },
   "cases": {
     "title": "Case Studies",
+    "banner_title": "Case Studies",
+    "banner_badge": "CLIENT SUCCESS",
+    "banner_desc": "Real results from real clients. See how we helped Chinese enterprises succeed in global markets.",
     "problem_label": "Challenge",
     "solution_label": "Solution",
     "result_label": "Result",
+    "cta_label": "YOUR SUCCESS STORY",
     "case1": {
       "client": "Cross-border E-commerce Company A",
+      "tag": "E-Commerce",
+      "metric1_label": "Speed Improvement",
+      "metric2_label": "Conversion Uplift",
+      "metric3_label": "Uptime SLA",
       "problem": "Slow website access speed overseas, affecting user experience and conversion rates",
       "solution": "Deployed global CDN acceleration solution using AWS CloudFront and edge computing optimization",
-      "result": "80% speed improvement, page load time reduced from 5 seconds to under 2 second, 35% conversion rate increase"
+      "result": "80% speed improvement, page load time reduced from 5 seconds to under 2 seconds, 35% conversion rate increase"
     },
     "case2": {
       "client": "SaaS Startup Team B",
+      "tag": "GDPR Compliance",
+      "metric1_label": "Time to Compliance",
+      "metric2_label": "Compliance Fines",
+      "metric3_label": "EU User Growth",
       "problem": "Needed to quickly enter the global market but lacked GDPR compliance experience and multilingual technical support",
       "solution": "Built GDPR-compliant multilingual website, implemented data encryption and user privacy protection solutions",
       "result": "Successfully passed GDPR audit, acquired 5000+ European users in 3 months, 92% user satisfaction"
@@ -126,36 +179,74 @@
   },
   "about": {
     "title": "About SuperKitt",
+    "banner_title": "About SuperKitt",
+    "banner_badge": "OUR STORY",
+    "banner_desc": "The technology hub built for Chinese enterprises expanding into global markets.",
+    "who_we_are": "WHO WE ARE",
+    "mission_title_long": "Building the Bridge Between Chinese Innovation and Global Markets",
     "description": "SuperKitt is dedicated to becoming the technology hub for Chinese enterprises going global. We focus on overseas cloud architecture, data security, website internationalization, AI enablement, and system integration.",
+    "description2": "Founded by engineers and consultants with decades of combined international experience, we understand the unique challenges Chinese companies face when crossing borders — from regulatory compliance to technical localization.",
     "mission_title": "Our Mission",
     "mission": "Making global expansion simpler, safer, and smarter for Chinese enterprises through technology.",
     "vision_title": "Our Vision",
     "vision": "To be the most trusted technology partner for Chinese enterprises expanding internationally, bridging the gap between innovation and global compliance.",
-    "partners_title": "Technology Partners"
+    "partners_title": "Technology Partners",
+    "partners_subtitle": "Backed by World-Class Technology",
+    "partners": {
+      "aws": "Primary cloud infrastructure partner for global deployments",
+      "azure": "Enterprise cloud solutions and hybrid infrastructure",
+      "cloudflare": "Global CDN, DDoS protection, and Zero Trust security",
+      "openai": "GPT-powered AI capabilities and intelligent automation"
+    },
+    "cta_label": "LET'S WORK TOGETHER"
   },
   "contact": {
     "title": "Contact Us",
+    "banner_title": "Get In Touch",
+    "banner_badge": "CONTACT US",
     "subtitle": "Let's discuss how we can help your business go global.",
+    "form_title": "Send Us a Message",
+    "form_subtitle": "Fill out the form below and our team will get back to you within 24 hours.",
     "form": {
       "name": "Name",
+      "name_placeholder": "Your full name",
       "email": "Email",
       "company": "Company",
+      "company_placeholder": "Your company name",
       "requirements": "Requirements",
-      "submit": "Submit Inquiry",
-      "submitting": "Submitting...",
-      "success": "Success! We will contact you soon.",
+      "requirements_placeholder": "Tell us about your project, goals, and any specific requirements...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Message sent! We'll be in touch within 24 hours.",
       "required": "This field is required"
     },
     "info": {
       "email": "service@superkitt.com",
       "email_label": "Email Us",
-      "email_desc": "We typically respond within 24 hours."
+      "email_desc": "We typically respond within 24 hours.",
+      "title": "How to Reach Us",
+      "desc": "Prefer to reach out directly? We're available via email and typically respond within one business day.",
+      "response_label": "Response Time",
+      "response_value": "Within 24 hours",
+      "location_label": "Headquarters",
+      "location_value": "Hong Kong (Global Remote)"
     }
   },
   "privacy": {
     "title": "Privacy & Compliance",
+    "banner_title": "Privacy & Data Protection",
+    "banner_badge": "DATA PROTECTION",
+    "banner_desc": "We are committed to protecting your data and maintaining the highest standards of privacy compliance.",
     "content": "SuperKitt complies with GDPR and data protection regulations in all countries. All customer data is securely stored and transmitted within authorized scope. We provide customized compliance consulting services to ensure your business meets international standards.",
     "toc": "Table of Contents",
+    "sections": {
+      "overview": "Overview",
+      "data_collected": "Data We Collect",
+      "data_use": "How We Use Data",
+      "your_rights": "Your Rights"
+    },
+    "data_collected_content": "We collect only the information necessary to provide our services. This includes contact information you provide directly (name, email, company), usage data collected automatically (IP address, browser type, pages visited), and any information you share during our consultations or service engagements.",
+    "data_use_content": "Your data is used solely to deliver and improve our services, communicate with you about your projects, comply with legal obligations, and provide relevant technical recommendations. We never sell or share your personal data with third parties for marketing purposes.",
     "data_protection_title": "Data Protection Principles",
     "data_protection_items": [
       "All client data is protected with industry-standard encryption",
@@ -163,15 +254,71 @@
       "Collection and use of client information only within authorized scope",
       "Regular security audits and vulnerability scanning"
     ],
+    "rights": {
+      "access_title": "Right to Access",
+      "access_desc": "You have the right to request a copy of all personal data we hold about you at any time.",
+      "rectify_title": "Right to Rectify",
+      "rectify_desc": "You can request that we correct any inaccurate or incomplete personal data we hold.",
+      "erasure_title": "Right to Erasure",
+      "erasure_desc": "You may request deletion of your personal data, subject to our legal retention obligations."
+    },
     "compliance_title": "Compliance Services",
     "compliance_content": "SuperKitt provides professional compliance consulting services to help your business meet data protection requirements in various countries, including GDPR compliance audits, SOC 2 certification preparation, ISO27001 system construction, and more."
   },
+  "blog": {
+    "title": "Blog",
+    "banner_title": "Insights & Resources",
+    "banner_badge": "BLOG",
+    "banner_desc": "Technical guides, industry insights, and best practices for Chinese enterprises going global.",
+    "min_read": "min read",
+    "read_more": "Read More",
+    "back_to_blog": "Back to Blog",
+    "related_posts": "Related Articles",
+    "posts": {
+      "cloud": {
+        "title": "Building a Global Cloud Architecture: A Practical Guide for Chinese Enterprises",
+        "excerpt": "Learn how to design a multi-region cloud infrastructure that balances performance, cost, and compliance across AWS, Azure, and GCP.",
+        "content": "## Why Global Cloud Architecture Matters\n\nAs Chinese enterprises expand into international markets, the need for a robust, globally distributed cloud infrastructure becomes critical. Latency, data sovereignty, and cost optimization are the three pillars that define a successful global deployment.\n\n## Multi-Region Strategy\n\nThe first step is choosing the right regions. For enterprises targeting Europe, Asia-Pacific, and North America, a tri-region setup with primary nodes in Frankfurt, Singapore, and Virginia provides optimal coverage. Each region should have its own set of core services while sharing a unified data layer.\n\n## Cost Optimization\n\nCloud costs can spiral quickly when operating across multiple regions. Implementing reserved instances for baseline workloads, spot instances for batch processing, and auto-scaling policies based on traffic patterns can reduce costs by 40-60%. Regular cost audits and FinOps practices ensure ongoing optimization.\n\n## Key Takeaways\n\nBuilding a global cloud architecture is not just about technology — it requires careful planning around compliance, cost management, and operational excellence. Start with a clear multi-region strategy and iterate based on real-world performance data."
+      },
+      "gdpr": {
+        "title": "GDPR Compliance Roadmap: What Every Chinese Enterprise Needs to Know",
+        "excerpt": "A comprehensive guide to navigating GDPR requirements, from data mapping to consent management and cross-border data transfers.",
+        "content": "## Understanding GDPR\n\nThe General Data Protection Regulation (GDPR) is the European Union's comprehensive data protection law. For Chinese enterprises entering the EU market, GDPR compliance is not optional — it's a legal requirement with fines up to 4% of global annual revenue.\n\n## Data Mapping and Classification\n\nThe foundation of GDPR compliance is understanding what personal data you collect, where it's stored, and how it flows through your systems. Create a comprehensive data inventory that maps every touchpoint where personal data is processed.\n\n## Consent Management\n\nGDPR requires explicit, informed consent for data processing. Implement a robust consent management platform that records user preferences, provides easy opt-out mechanisms, and maintains an audit trail of all consent changes.\n\n## Cross-Border Data Transfers\n\nTransferring personal data outside the EU requires specific legal mechanisms. Standard Contractual Clauses (SCCs) are the most commonly used tool, but enterprises should also consider data localization strategies and privacy-enhancing technologies.\n\n## Building a Compliance Program\n\nGDPR compliance is an ongoing process, not a one-time project. Establish a dedicated privacy team, conduct regular Data Protection Impact Assessments (DPIAs), and maintain comprehensive documentation of all processing activities."
+      },
+      "ai": {
+        "title": "Deploying Multilingual AI Customer Service: From GPT to Production",
+        "excerpt": "How to build and deploy AI-powered customer service that handles multiple languages with cultural sensitivity and technical reliability.",
+        "content": "## The Multilingual AI Challenge\n\nCustomer service is often the first touchpoint for international users. AI-powered chatbots can provide 24/7 support across time zones, but multilingual deployment requires more than simple translation — it demands cultural awareness and context understanding.\n\n## Architecture Design\n\nA production-ready multilingual AI system needs three core components: a language detection layer, a context-aware processing engine built on GPT-4, and a response quality assurance module. Each component must be optimized for latency and accuracy.\n\n## Training and Fine-Tuning\n\nWhile large language models provide a strong foundation, fine-tuning on domain-specific data dramatically improves response quality. Collect and curate training data from real customer interactions, ensuring representation across all target languages and common query patterns.\n\n## Measuring Success\n\nTrack key metrics including first-response accuracy, resolution rate, customer satisfaction scores, and language-specific performance. Use these metrics to continuously improve your AI models and identify areas where human escalation protocols need refinement."
+      },
+      "ecommerce": {
+        "title": "Cross-Border E-Commerce Tech Stack: The Complete 2026 Guide",
+        "excerpt": "Everything you need to know about building a high-performance cross-border e-commerce platform, from payment integration to localization.",
+        "content": "## The Cross-Border E-Commerce Landscape\n\nCross-border e-commerce for Chinese brands has grown exponentially, but technical challenges remain significant. From multi-currency payments to localized shopping experiences, the tech stack must support seamless international operations.\n\n## Choosing Your Platform\n\nShopify and WooCommerce are the two dominant platforms for independent stores. Shopify offers simplicity and a rich app ecosystem, while WooCommerce provides more customization flexibility. Your choice should align with your team's technical capabilities and growth plans.\n\n## Payment Integration\n\nInternational payment processing requires supporting multiple payment methods — credit cards, PayPal, local payment options like iDEAL (Netherlands) or Bancontact (Belgium). Stripe and Adyen provide the broadest coverage with competitive processing fees.\n\n## Performance Optimization\n\nPage load speed directly impacts conversion rates. Implement a global CDN, optimize images with next-gen formats like WebP and AVIF, and use server-side rendering for critical pages. Target sub-2-second load times across all markets."
+      },
+      "k8s": {
+        "title": "Multi-Region Kubernetes: Deploying Applications Across Continents",
+        "excerpt": "A deep dive into Kubernetes multi-region deployment strategies, service mesh configuration, and disaster recovery planning.",
+        "content": "## Why Multi-Region Kubernetes\n\nAs applications scale globally, single-region deployments become a liability. Network latency, regulatory requirements, and disaster recovery needs all point toward multi-region Kubernetes architectures.\n\n## Cluster Federation\n\nKubernetes cluster federation allows you to manage multiple clusters as a single logical unit. While the upstream federation project has evolved, tools like Admiralty, Liqo, and custom operators built on the Cluster API provide robust multi-cluster management capabilities.\n\n## Service Mesh for Global Traffic\n\nA service mesh like Istio or Linkerd provides the networking layer needed for cross-region communication. Configure traffic routing policies that account for latency, load, and failover requirements. Implement circuit breakers and retry policies to handle inter-region network variability.\n\n## Disaster Recovery\n\nMulti-region deployments inherently provide disaster recovery capabilities, but they must be explicitly designed and tested. Implement automated failover procedures, maintain consistent data replication across regions, and conduct regular disaster recovery drills.\n\n## Observability at Scale\n\nMonitoring a multi-region Kubernetes deployment requires centralized observability. Deploy Prometheus with Thanos or Cortex for metrics aggregation, use distributed tracing with Jaeger or Tempo, and implement centralized logging with the ELK stack or Loki."
+      },
+      "security": {
+        "title": "Data Security Best Practices for Cross-Border Operations",
+        "excerpt": "Protecting sensitive data across borders: encryption strategies, access controls, and compliance frameworks for international businesses.",
+        "content": "## The Cross-Border Security Challenge\n\nOperating across borders introduces unique security challenges. Different jurisdictions have different data protection laws, threat landscapes vary by region, and the attack surface expands with every new market entry.\n\n## Encryption Strategy\n\nImplement encryption at every layer: TLS 1.3 for data in transit, AES-256 for data at rest, and application-level encryption for sensitive fields. Use a centralized key management service (KMS) that supports multi-region key distribution while maintaining control over key lifecycle.\n\n## Zero Trust Architecture\n\nAdopt a Zero Trust security model where no user or system is trusted by default. Implement identity-based access controls, micro-segmentation, and continuous verification. Tools like Cloudflare Access, Zscaler, and BeyondCorp provide enterprise-grade Zero Trust capabilities.\n\n## Incident Response\n\nPrepare for security incidents with a comprehensive response plan that accounts for multi-jurisdiction notification requirements. GDPR requires notification within 72 hours, while other jurisdictions have their own timelines. Automate where possible and maintain clear escalation procedures.\n\n## Regular Audits\n\nConduct regular security audits including penetration testing, code reviews, and compliance assessments. Third-party audits provide independent validation and are often required for certifications like SOC 2 and ISO 27001."
+      }
+    }
+  },
   "footer": {
-    "copyright": "© 2025 SuperKitt. All rights reserved.",
-    "description": "Your Global IT Partner for Going Abroad",
+    "copyright": "© 2026 SuperKitt. All rights reserved.",
+    "description": "Enterprise-grade IT solutions transforming global businesses at scale.",
     "services_label": "Services",
     "company_label": "Company",
+    "resources_label": "Resources",
     "contact_label": "Contact",
     "back_to_top": "Back to top"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   }
 }

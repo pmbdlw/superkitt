@@ -19,7 +19,7 @@ export default function Button({
       className={clsx(
         'font-medium transition-all duration-300 inline-flex items-center justify-center cursor-pointer',
         {
-          'bg-gold text-[#1A1A1A] hover:bg-gold-light btn-shine': variant === 'primary',
+          'bg-gold text-white hover:bg-gold-light btn-shine': variant === 'primary',
           'border border-border text-heading hover:border-heading/20': variant === 'outline',
           'py-2.5 px-5 text-[13px]': size === 'sm',
           'py-3 px-6 text-[15px]': size === 'md',
