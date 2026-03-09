@@ -175,6 +175,16 @@
       "problem": "Needed to quickly enter the global market but lacked GDPR compliance experience and multilingual technical support",
       "solution": "Built GDPR-compliant multilingual website, implemented data encryption and user privacy protection solutions",
       "result": "Successfully passed GDPR audit, acquired 5000+ European users in 3 months, 92% user satisfaction"
+    },
+    "case3": {
+      "client": "Foreign Trade Supply Chain Company C",
+      "tag": "Custom System Development",
+      "metric1_label": "Efficiency Gain",
+      "metric2_label": "Dev Cycle",
+      "metric3_label": "Business Coverage",
+      "problem": "Rapid business growth outpaced manual Excel-based workflows, requiring a digital management system for procurement, sales, logistics and settlement",
+      "solution": "Custom-built ERP management system tailored to actual business processes, covering procurement contracts, sales contracts, logistics execution and settlement, with integrated task reminders and data dashboards",
+      "result": "60% operational efficiency improvement, contract management upgraded from manual ledgers to full-process digital control, achieving integrated procurement-sales-logistics-settlement management"
     }
   },
   "about": {

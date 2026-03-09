@@ -44,6 +44,32 @@ export default function Cases() {
         { value: '99.9%', label: t('cases.case1.metric3_label'), color: '#F5C842' },
       ],
     },
+    {
+      key: 'case2',
+      tagColor: '#3FBFAF',
+      tagBg: 'rgba(63,191,175,0.2)',
+      headerBg: 'rgba(63,191,175,0.08)',
+      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=1200&q=80&auto=format&fit=crop',
+      imageAlt: 'GDPR compliance and data security',
+      metrics: [
+        { value: '3mo', label: t('cases.case2.metric1_label'), color: '#3FBFAF' },
+        { value: '$0', label: t('cases.case2.metric2_label'), color: '#C4614A' },
+        { value: '5000+', label: t('cases.case2.metric3_label'), color: '#F5C842' },
+      ],
+    },
+    {
+      key: 'case3',
+      tagColor: '#F5C842',
+      tagBg: 'rgba(245,200,66,0.2)',
+      headerBg: 'rgba(245,200,66,0.08)',
+      image: '/images/cases/case001.png',
+      imageAlt: 'Custom ERP management system dashboard',
+      metrics: [
+        { value: '60%', label: t('cases.case3.metric1_label'), color: '#C4614A' },
+        { value: '3mo', label: t('cases.case3.metric2_label'), color: '#3FBFAF' },
+        { value: '4in1', label: t('cases.case3.metric3_label'), color: '#F5C842' },
+      ],
+    },
   ]
 
   return (
