@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
-import { Target, Eye, Cloud, Shield, Cpu, ArrowRight } from 'lucide-react'
+import { Cloud, Shield, Cpu, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
 import Banner from '@/components/Banner'
@@ -101,9 +101,6 @@ export default function About() {
                 className="bg-surface rounded-lg p-10 flex flex-col gap-5 border-l-4 border-[#C4614A]"
                 style={{ boxShadow: 'inset 0 0 0 1px rgb(var(--color-border))' }}
               >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[rgba(196,97,74,0.12)]">
-                  <Target size={18} style={{ color: '#C4614A' }} strokeWidth={1.5} />
-                </div>
                 <h3 className="text-xl font-semibold text-heading font-serif">{t('about.mission_title')}</h3>
                 <p className="text-sm text-muted leading-relaxed">{t('about.mission')}</p>
               </motion.div>
@@ -116,9 +113,6 @@ export default function About() {
                 className="bg-surface rounded-lg p-10 flex flex-col gap-5 border-l-4 border-[#3FBFAF]"
                 style={{ boxShadow: 'inset 0 0 0 1px rgb(var(--color-border))' }}
               >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[rgba(63,191,175,0.12)]">
-                  <Eye size={18} style={{ color: '#3FBFAF' }} strokeWidth={1.5} />
-                </div>
                 <h3 className="text-xl font-semibold text-heading font-serif">{t('about.vision_title')}</h3>
                 <p className="text-sm text-muted leading-relaxed">{t('about.vision')}</p>
               </motion.div>

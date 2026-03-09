@@ -4,7 +4,8 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
-import { Cloud, ShoppingCart, Brain, ArrowRight, Quote } from 'lucide-react'
+import { ArrowRight, Quote } from 'lucide-react'
+import Image from 'next/image'
 import Layout from '@/components/Layout'
 import Button from '@/components/Button'
 import Banner from '@/components/Banner'
@@ -39,28 +40,28 @@ export default function Home() {
 
   const serviceCards = [
     {
-      Icon: Cloud,
       titleKey: 'services.categories.cloud.title',
+      descKey: 'services.categories.cloud.description',
+      itemsKey: 'services.categories.cloud.items',
       accentColor: '#3FBFAF',
-      iconBgClass: 'bg-aqua/10',
-      iconColorClass: 'text-aqua',
       linkColorClass: 'text-aqua',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&auto=format&fit=crop',
     },
     {
-      Icon: ShoppingCart,
       titleKey: 'services.categories.ecommerce.title',
+      descKey: 'services.categories.ecommerce.description',
+      itemsKey: 'services.categories.ecommerce.items',
       accentColor: '#C4614A',
-      iconBgClass: 'bg-gold/10',
-      iconColorClass: 'text-gold',
       linkColorClass: 'text-gold',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80&auto=format&fit=crop',
     },
     {
-      Icon: Brain,
       titleKey: 'services.categories.ai.title',
+      descKey: 'services.categories.ai.description',
+      itemsKey: 'services.categories.ai.items',
       accentColor: '#F5C842',
-      iconBgClass: 'bg-butter/10',
-      iconColorClass: 'text-butter',
       linkColorClass: 'text-butter',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80&auto=format&fit=crop',
     },
   ]
 
@@ -154,33 +155,57 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {serviceCards.map((card, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: easeOutExpo }}
-                className="flex flex-col gap-6 p-8 border border-border hover:shadow-sm transition-shadow duration-300"
-                style={{ borderTopColor: card.accentColor, borderTopWidth: '3px' }}
-              >
-                <div
-                  className={`flex items-center justify-center w-[60px] h-[60px] ${card.iconBgClass} border border-border`}
+            {serviceCards.map((card, index) => {
+              const items = t(card.itemsKey, { returnObjects: true }) as string[]
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: easeOutExpo }}
+                  className="flex flex-col overflow-hidden border border-border group"
                 >
-                  <card.Icon className={`w-6 h-6 ${card.iconColorClass}`} />
-                </div>
-                <h3 className="text-2xl font-medium text-heading font-serif">
-                  {t(card.titleKey)}
-                </h3>
-                <Link
-                  href="/services"
-                  className={`flex items-center gap-2 text-[13px] font-medium ${card.linkColorClass} transition-opacity hover:opacity-70`}
-                >
-                  {t('services.learn_more')}
-                  <ArrowRight size={14} />
-                </Link>
-              </motion.div>
-            ))}
+                  {/* Image strip */}
+                  <div className="relative h-[160px] overflow-hidden">
+                    <Image
+                      src={card.image}
+                      alt={t(card.titleKey)}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/40 to-transparent" />
+                  </div>
+                  {/* Content */}
+                  <div
+                    className="flex flex-col gap-4 p-8 border-l-2 flex-1"
+                    style={{ borderLeftColor: card.accentColor }}
+                  >
+                    <h3 className="text-xl font-medium text-heading font-serif">
+                      {t(card.titleKey)}
+                    </h3>
+                    <p className="text-sm text-muted leading-relaxed">
+                      {t(card.descKey)}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      {items.slice(0, 3).map((item, i) => (
+                        <span key={i} className="text-[11px] text-subtle border border-border px-2.5 py-1 rounded-sm">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                    <Link
+                      href="/services"
+                      className={`flex items-center gap-2 text-[13px] font-medium ${card.linkColorClass} transition-opacity hover:opacity-70 mt-auto pt-2`}
+                    >
+                      {t('services.learn_more')}
+                      <ArrowRight size={14} />
+                    </Link>
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
 
           <motion.div

@@ -58,21 +58,18 @@ export default function Contact() {
     {
       icon: Mail,
       color: '#C4614A',
-      bg: 'rgba(196,97,74,0.12)',
       label: t('contact.info.email_label'),
       value: 'service@superkitt.com',
     },
     {
       icon: Timer,
       color: '#3FBFAF',
-      bg: 'rgba(63,191,175,0.12)',
       label: t('contact.info.response_label'),
       value: t('contact.info.response_value'),
     },
     {
       icon: Globe,
       color: '#F5C842',
-      bg: 'rgba(245,200,66,0.12)',
       label: t('contact.info.location_label'),
       value: t('contact.info.location_value'),
     },
@@ -170,12 +167,7 @@ export default function Contact() {
                 const Icon = item.icon
                 return (
                   <div key={i} className="flex items-center gap-4 bg-surface border border-border rounded-lg px-5 py-5">
-                    <div
-                      className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: item.bg }}
-                    >
-                      <Icon size={18} style={{ color: item.color }} strokeWidth={1.5} />
-                    </div>
+                    <Icon size={20} style={{ color: item.color }} strokeWidth={1.5} className="flex-shrink-0" />
                     <div className="flex flex-col gap-0.5">
                       <span className="text-xs text-muted">{item.label}</span>
                       <span className="text-sm font-medium text-heading">{item.value}</span>

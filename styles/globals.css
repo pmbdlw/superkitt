@@ -6,11 +6,11 @@
   /* ===== Light theme (default) — Pantone 2025 palette ===== */
   :root {
     --color-bg: 255 255 255;
-    --color-surface: 253 244 238;       /* warm cream #FDF4EE */
-    --color-heading: 26 12 4;           /* deep espresso #1A0C04 */
-    --color-muted: 107 90 80;           /* mocha #6B5A50 */
-    --color-subtle: 156 136 128;        /* warm gray #9C8880 */
-    --color-border: 232 212 200;        /* warm border #E8D4C8 */
+    --color-surface: 247 245 243;       /* warm stone #F7F5F3 */
+    --color-heading: 32 24 18;          /* deep brown #201812 */
+    --color-muted: 100 94 88;           /* warm gray #645E58 */
+    --color-subtle: 148 140 134;        /* stone gray #948C86 */
+    --color-border: 228 224 220;        /* neutral warm border #E4E0DC */
     --color-card-bg: 255 255 255;
     /* Primary accent — Terracotta (Poppy, Pantone 2025) */
     --color-gold: 196 97 74;            /* terracotta #C4614A */
@@ -20,8 +20,8 @@
     --color-aqua: 63 191 175;           /* Aqua Foam #3FBFAF */
     --color-butter: 245 200 66;         /* Butter Cup #F5C842 */
     --color-espresso: 44 32 22;          /* warm espresso #2C2016 */
-    --card-shadow: 0 1px 3px rgba(196, 97, 74, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-    --card-hover-shadow: 0 4px 16px rgba(196, 97, 74, 0.10);
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.03);
+    --card-hover-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     --nav-bg: 255 255 255;
   }
 
@@ -104,7 +104,7 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   .dark-card:hover {
-    border-color: rgb(var(--color-heading) / 0.15);
+    border-color: rgb(var(--color-heading) / 0.12);
     box-shadow: var(--card-hover-shadow);
   }
 
@@ -138,9 +138,9 @@
 /* Always-dark sections (Trust, CTA, Footer) — override CSS variables */
 .always-dark {
   --color-heading: 255 255 255;
-  --color-muted: 196 168 152;     /* warm beige #C4A898 */
-  --color-subtle: 162 142 132;    /* #A28E84 */
-  --color-border: 62 48 36;       /* #3E3024 — warm border */
+  --color-muted: 180 170 162;     /* warm stone #B4AAA2 */
+  --color-subtle: 148 140 134;    /* #948C86 */
+  --color-border: 56 50 44;       /* #38322C */
   --color-card-bg: 36 24 16;      /* #241810 */
 }
 .dark .always-dark {

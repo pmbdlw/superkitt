@@ -29,9 +29,7 @@ export default function ServiceCard({
       }}
       className="group dark-card flex flex-col gap-6"
     >
-      <div className="w-[60px] h-[60px] border border-gold-muted flex items-center justify-center">
-        <Icon size={28} className="text-gold" strokeWidth={1.5} />
-      </div>
+      <Icon size={28} className="text-gold" strokeWidth={1.5} />
       <h3 className="text-2xl font-medium text-heading font-serif">
         {title}
       </h3>

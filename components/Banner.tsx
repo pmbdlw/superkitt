@@ -33,7 +33,7 @@ export default function Banner({
 
   if (variant === 'hero') {
     return (
-      <div className="relative min-h-[720px] flex items-center overflow-hidden bg-[#0A0A0A]">
+      <div className="relative min-h-[720px] flex items-center overflow-hidden bg-[#0A0A0A] always-dark">
         {/* Tech animated background */}
         <TechBackground variant="hero" />
 

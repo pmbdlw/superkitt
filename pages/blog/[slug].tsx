@@ -133,8 +133,8 @@ export default function BlogDetail({ post, relatedPosts }: BlogDetailProps) {
             {/* Author card */}
             <div className="mt-14 pt-8 border-t border-border">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-                  <User size={20} className="text-gold" />
+                <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center">
+                  <User size={18} className="text-muted" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-heading">{post.author.name}</p>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
-import { Cloud, Globe, TrendingUp, Brain, Database, ShoppingCart, Users, LucideIcon, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
 import Banner from '@/components/Banner'
@@ -12,25 +12,23 @@ import Button from '@/components/Button'
 const easeOutExpo = [0.22, 1, 0.36, 1]
 
 interface ServiceCategory {
-  Icon: LucideIcon
   titleKey: string
   descKey: string
   itemsKey: string
   color: string
-  bgColor: string
 }
 
 export default function Services() {
   const { t } = useTranslation('common')
 
   const serviceCategories: ServiceCategory[] = [
-    { Icon: Cloud, titleKey: 'services.categories.cloud.title', descKey: 'services.categories.cloud.description', itemsKey: 'services.categories.cloud.items', color: '#C4614A', bgColor: 'rgba(196,97,74,0.12)' },
-    { Icon: Globe, titleKey: 'services.categories.website.title', descKey: 'services.categories.website.description', itemsKey: 'services.categories.website.items', color: '#3FBFAF', bgColor: 'rgba(63,191,175,0.12)' },
-    { Icon: TrendingUp, titleKey: 'services.categories.marketing.title', descKey: 'services.categories.marketing.description', itemsKey: 'services.categories.marketing.items', color: '#C4614A', bgColor: 'rgba(196,97,74,0.12)' },
-    { Icon: Brain, titleKey: 'services.categories.ai.title', descKey: 'services.categories.ai.description', itemsKey: 'services.categories.ai.items', color: '#3FBFAF', bgColor: 'rgba(63,191,175,0.12)' },
-    { Icon: Database, titleKey: 'services.categories.integration.title', descKey: 'services.categories.integration.description', itemsKey: 'services.categories.integration.items', color: '#F5C842', bgColor: 'rgba(245,200,66,0.12)' },
-    { Icon: ShoppingCart, titleKey: 'services.categories.ecommerce.title', descKey: 'services.categories.ecommerce.description', itemsKey: 'services.categories.ecommerce.items', color: '#C4614A', bgColor: 'rgba(196,97,74,0.12)' },
-    { Icon: Users, titleKey: 'services.categories.consulting.title', descKey: 'services.categories.consulting.description', itemsKey: 'services.categories.consulting.items', color: '#3FBFAF', bgColor: 'rgba(63,191,175,0.12)' },
+    { titleKey: 'services.categories.cloud.title', descKey: 'services.categories.cloud.description', itemsKey: 'services.categories.cloud.items', color: '#C4614A' },
+    { titleKey: 'services.categories.website.title', descKey: 'services.categories.website.description', itemsKey: 'services.categories.website.items', color: '#3FBFAF' },
+    { titleKey: 'services.categories.marketing.title', descKey: 'services.categories.marketing.description', itemsKey: 'services.categories.marketing.items', color: '#C4614A' },
+    { titleKey: 'services.categories.ai.title', descKey: 'services.categories.ai.description', itemsKey: 'services.categories.ai.items', color: '#3FBFAF' },
+    { titleKey: 'services.categories.integration.title', descKey: 'services.categories.integration.description', itemsKey: 'services.categories.integration.items', color: '#F5C842' },
+    { titleKey: 'services.categories.ecommerce.title', descKey: 'services.categories.ecommerce.description', itemsKey: 'services.categories.ecommerce.items', color: '#C4614A' },
+    { titleKey: 'services.categories.consulting.title', descKey: 'services.categories.consulting.description', itemsKey: 'services.categories.consulting.items', color: '#3FBFAF' },
   ]
 
   return (
@@ -126,7 +124,6 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {serviceCategories.map((category, index) => {
               const items = t(category.itemsKey, { returnObjects: true }) as string[]
-              const Icon = category.Icon
 
               return (
                 <motion.div
@@ -135,23 +132,15 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.5, delay: (index % 2) * 0.1, ease: easeOutExpo }}
-                  className="bg-surface border border-border rounded-lg p-10 flex flex-col gap-5 hover:border-heading/20 transition-colors duration-300"
+                  className="bg-surface border-l-2 rounded-none p-10 flex flex-col gap-5"
+                  style={{ borderLeftColor: category.color }}
                 >
-                  <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: category.bgColor }}
-                  >
-                    <Icon size={22} style={{ color: category.color }} strokeWidth={1.5} />
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-semibold text-heading font-serif leading-snug mb-3">
-                      {t(category.titleKey)}
-                    </h3>
-                    <p className="text-sm text-muted leading-relaxed">
-                      {t(category.descKey)}
-                    </p>
-                  </div>
+                  <h3 className="text-xl font-semibold text-heading font-serif leading-snug">
+                    {t(category.titleKey)}
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed">
+                    {t(category.descKey)}
+                  </p>
 
                   <ul className="flex flex-col gap-2 mt-1">
                     {items.map((item, itemIndex) => (
